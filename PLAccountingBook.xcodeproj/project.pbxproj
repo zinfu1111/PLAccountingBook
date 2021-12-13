@@ -12,6 +12,8 @@
 		9C25641A276798540029131D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C256418276798540029131D /* Main.storyboard */; };
 		9C25641C276798560029131D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C25641B276798560029131D /* Assets.xcassets */; };
 		9C25641F276798560029131D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C25641D276798560029131D /* LaunchScreen.storyboard */; };
+		9C25642827679CB30029131D /* PLAccountingBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C25642627679CB30029131D /* PLAccountingBook.xcdatamodeld */; };
+		9C25642A2767A0BE0029131D /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2564292767A0BE0029131D /* RecordManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		9C25641B276798560029131D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C25641E276798560029131D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C256420276798560029131D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C25642727679CB30029131D /* PLAccountingBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PLAccountingBook.xcdatamodel; sourceTree = "<group>"; };
+		9C2564292767A0BE0029131D /* RecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				9C25641B276798560029131D /* Assets.xcassets */,
 				9C25641D276798560029131D /* LaunchScreen.storyboard */,
 				9C256420276798560029131D /* Info.plist */,
+				9C25642627679CB30029131D /* PLAccountingBook.xcdatamodeld */,
+				9C2564292767A0BE0029131D /* RecordManager.swift */,
 			);
 			path = PLAccountingBook;
 			sourceTree = "<group>";
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C25642A2767A0BE0029131D /* RecordManager.swift in Sources */,
 				9C256413276798540029131D /* AppDelegate.swift in Sources */,
 				9C256415276798540029131D /* SceneDelegate.swift in Sources */,
+				9C25642827679CB30029131D /* PLAccountingBook.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,8 +299,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +312,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -319,8 +329,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,7 +342,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -356,6 +368,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9C25642627679CB30029131D /* PLAccountingBook.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9C25642727679CB30029131D /* PLAccountingBook.xcdatamodel */,
+			);
+			currentVersion = 9C25642727679CB30029131D /* PLAccountingBook.xcdatamodel */;
+			path = PLAccountingBook.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9C256407276798540029131D /* Project object */;
 }
