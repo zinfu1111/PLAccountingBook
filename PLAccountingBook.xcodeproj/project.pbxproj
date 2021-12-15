@@ -14,6 +14,10 @@
 		9C25641F276798560029131D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C25641D276798560029131D /* LaunchScreen.storyboard */; };
 		9C25642827679CB30029131D /* PLAccountingBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C25642627679CB30029131D /* PLAccountingBook.xcdatamodeld */; };
 		9C25642A2767A0BE0029131D /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2564292767A0BE0029131D /* RecordManager.swift */; };
+		9C25642C2768F95F0029131D /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C25642B2768F95F0029131D /* RecordViewModel.swift */; };
+		9CC6707D2769F1F60060457A /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6707C2769F1F60060457A /* RecordViewController.swift */; };
+		9CC67080276A0E770060457A /* RecordTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6707F276A0E770060457A /* RecordTableViewDataSource.swift */; };
+		9CC67084276A0FB10060457A /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC67083276A0FB10060457A /* Record.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		9C256420276798560029131D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C25642727679CB30029131D /* PLAccountingBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PLAccountingBook.xcdatamodel; sourceTree = "<group>"; };
 		9C2564292767A0BE0029131D /* RecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
+		9C25642B2768F95F0029131D /* RecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
+		9CC6707C2769F1F60060457A /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		9CC6707F276A0E770060457A /* RecordTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewDataSource.swift; sourceTree = "<group>"; };
+		9CC67083276A0FB10060457A /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,10 @@
 		9C256411276798540029131D /* PLAccountingBook */ = {
 			isa = PBXGroup;
 			children = (
+				9CC67085276A0FD90060457A /* Manager */,
+				9CC67082276A0F960060457A /* Models */,
+				9CC67081276A0F490060457A /* ViewController */,
+				9CC6707E276A0E240060457A /* ViewModels */,
 				9C256412276798540029131D /* AppDelegate.swift */,
 				9C256414276798540029131D /* SceneDelegate.swift */,
 				9C256418276798540029131D /* Main.storyboard */,
@@ -65,9 +77,41 @@
 				9C25641D276798560029131D /* LaunchScreen.storyboard */,
 				9C256420276798560029131D /* Info.plist */,
 				9C25642627679CB30029131D /* PLAccountingBook.xcdatamodeld */,
-				9C2564292767A0BE0029131D /* RecordManager.swift */,
 			);
 			path = PLAccountingBook;
+			sourceTree = "<group>";
+		};
+		9CC6707E276A0E240060457A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9C25642B2768F95F0029131D /* RecordViewModel.swift */,
+				9CC6707F276A0E770060457A /* RecordTableViewDataSource.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9CC67081276A0F490060457A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9CC6707C2769F1F60060457A /* RecordViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9CC67082276A0F960060457A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9CC67083276A0FB10060457A /* Record.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9CC67085276A0FD90060457A /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				9C2564292767A0BE0029131D /* RecordManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +186,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C25642A2767A0BE0029131D /* RecordManager.swift in Sources */,
+				9CC67080276A0E770060457A /* RecordTableViewDataSource.swift in Sources */,
 				9C256413276798540029131D /* AppDelegate.swift in Sources */,
 				9C256415276798540029131D /* SceneDelegate.swift in Sources */,
+				9CC6707D2769F1F60060457A /* RecordViewController.swift in Sources */,
+				9C25642C2768F95F0029131D /* RecordViewModel.swift in Sources */,
+				9CC67084276A0FB10060457A /* Record.swift in Sources */,
 				9C25642827679CB30029131D /* PLAccountingBook.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
