@@ -15,9 +15,19 @@
 		9C25642827679CB30029131D /* PLAccountingBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C25642627679CB30029131D /* PLAccountingBook.xcdatamodeld */; };
 		9C25642A2767A0BE0029131D /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2564292767A0BE0029131D /* RecordManager.swift */; };
 		9C25642C2768F95F0029131D /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C25642B2768F95F0029131D /* RecordViewModel.swift */; };
+		9CA4717E276B10B00043F67A /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CA4717D276B10B00043F67A /* DatePickerView.xib */; };
+		9CA47180276B170C0043F67A /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4717F276B170C0043F67A /* DatePickerView.swift */; };
+		9CA47184276B32720043F67A /* PopupViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA47183276B32720043F67A /* PopupViewManager.swift */; };
+		9CA47189276B9E3C0043F67A /* Ext+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA47188276B9E3C0043F67A /* Ext+Date.swift */; };
+		9CA4718B276BA2440043F67A /* Ext+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4718A276BA2440043F67A /* Ext+Int.swift */; };
+		9CA4718D276BA2AB0043F67A /* Ext+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4718C276BA2AB0043F67A /* Ext+Double.swift */; };
 		9CC6707D2769F1F60060457A /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6707C2769F1F60060457A /* RecordViewController.swift */; };
 		9CC67080276A0E770060457A /* RecordTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6707F276A0E770060457A /* RecordTableViewDataSource.swift */; };
 		9CC67084276A0FB10060457A /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC67083276A0FB10060457A /* Record.swift */; };
+		9CC67089276A11C30060457A /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC67087276A11C30060457A /* RecordCell.swift */; };
+		9CC6708A276A11C30060457A /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC67088276A11C30060457A /* RecordCell.xib */; };
+		9CC6708C276A17620060457A /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6708B276A17620060457A /* TagView.swift */; };
+		9CC6708E276A17F10060457A /* TagView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC6708D276A17F10060457A /* TagView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +41,19 @@
 		9C25642727679CB30029131D /* PLAccountingBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PLAccountingBook.xcdatamodel; sourceTree = "<group>"; };
 		9C2564292767A0BE0029131D /* RecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
 		9C25642B2768F95F0029131D /* RecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
+		9CA4717D276B10B00043F67A /* DatePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerView.xib; sourceTree = "<group>"; };
+		9CA4717F276B170C0043F67A /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		9CA47183276B32720043F67A /* PopupViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewManager.swift; sourceTree = "<group>"; };
+		9CA47188276B9E3C0043F67A /* Ext+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Date.swift"; sourceTree = "<group>"; };
+		9CA4718A276BA2440043F67A /* Ext+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Int.swift"; sourceTree = "<group>"; };
+		9CA4718C276BA2AB0043F67A /* Ext+Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Double.swift"; sourceTree = "<group>"; };
 		9CC6707C2769F1F60060457A /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		9CC6707F276A0E770060457A /* RecordTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewDataSource.swift; sourceTree = "<group>"; };
 		9CC67083276A0FB10060457A /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		9CC67087276A11C30060457A /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
+		9CC67088276A11C30060457A /* RecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordCell.xib; sourceTree = "<group>"; };
+		9CC6708B276A17620060457A /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		9CC6708D276A17F10060457A /* TagView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +86,8 @@
 		9C256411276798540029131D /* PLAccountingBook */ = {
 			isa = PBXGroup;
 			children = (
+				9CA47187276B9E0D0043F67A /* Extension */,
+				9CC67086276A11940060457A /* Views */,
 				9CC67085276A0FD90060457A /* Manager */,
 				9CC67082276A0F960060457A /* Models */,
 				9CC67081276A0F490060457A /* ViewController */,
@@ -79,6 +101,16 @@
 				9C25642627679CB30029131D /* PLAccountingBook.xcdatamodeld */,
 			);
 			path = PLAccountingBook;
+			sourceTree = "<group>";
+		};
+		9CA47187276B9E0D0043F67A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9CA47188276B9E3C0043F67A /* Ext+Date.swift */,
+				9CA4718A276BA2440043F67A /* Ext+Int.swift */,
+				9CA4718C276BA2AB0043F67A /* Ext+Double.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		9CC6707E276A0E240060457A /* ViewModels */ = {
@@ -110,8 +142,22 @@
 			isa = PBXGroup;
 			children = (
 				9C2564292767A0BE0029131D /* RecordManager.swift */,
+				9CA47183276B32720043F67A /* PopupViewManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		9CC67086276A11940060457A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9CC67087276A11C30060457A /* RecordCell.swift */,
+				9CC67088276A11C30060457A /* RecordCell.xib */,
+				9CC6708B276A17620060457A /* TagView.swift */,
+				9CC6708D276A17F10060457A /* TagView.xib */,
+				9CA4717F276B170C0043F67A /* DatePickerView.swift */,
+				9CA4717D276B10B00043F67A /* DatePickerView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,8 +218,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CA4717E276B10B00043F67A /* DatePickerView.xib in Resources */,
 				9C25641F276798560029131D /* LaunchScreen.storyboard in Resources */,
+				9CC6708E276A17F10060457A /* TagView.xib in Resources */,
 				9C25641C276798560029131D /* Assets.xcassets in Resources */,
+				9CC6708A276A11C30060457A /* RecordCell.xib in Resources */,
 				9C25641A276798540029131D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,11 +235,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C25642A2767A0BE0029131D /* RecordManager.swift in Sources */,
+				9CA4718D276BA2AB0043F67A /* Ext+Double.swift in Sources */,
+				9CC6708C276A17620060457A /* TagView.swift in Sources */,
 				9CC67080276A0E770060457A /* RecordTableViewDataSource.swift in Sources */,
+				9CA47184276B32720043F67A /* PopupViewManager.swift in Sources */,
+				9CA47180276B170C0043F67A /* DatePickerView.swift in Sources */,
+				9CA4718B276BA2440043F67A /* Ext+Int.swift in Sources */,
 				9C256413276798540029131D /* AppDelegate.swift in Sources */,
 				9C256415276798540029131D /* SceneDelegate.swift in Sources */,
+				9CC67089276A11C30060457A /* RecordCell.swift in Sources */,
 				9CC6707D2769F1F60060457A /* RecordViewController.swift in Sources */,
 				9C25642C2768F95F0029131D /* RecordViewModel.swift in Sources */,
+				9CA47189276B9E3C0043F67A /* Ext+Date.swift in Sources */,
 				9CC67084276A0FB10060457A /* Record.swift in Sources */,
 				9C25642827679CB30029131D /* PLAccountingBook.xcdatamodeld in Sources */,
 			);

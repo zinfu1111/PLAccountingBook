@@ -23,6 +23,7 @@ class RecordTableViewDataSource<CELL:UITableViewCell,T>: NSObject,UITableViewDel
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        tableView.register(UINib(nibName: "\(CELL.self)", bundle: nil), forCellReuseIdentifier: "\(CELL.self)")
         return items.count
     }
     
