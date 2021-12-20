@@ -45,7 +45,7 @@ class EditRecordViewController: UIViewController,UITextFieldDelegate {
             costTextField.tag = 3
         }
     }
-    
+    let textFieldPickerView = TextFieldPickerView()
     let datePickerView = DatePickerView()
     var viewModel: EditRecordViewModel!
     
@@ -53,6 +53,7 @@ class EditRecordViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        createTextFieldPickerView()
         createDatePickerView()
         hidePopupWhenTap()
     }
@@ -62,11 +63,21 @@ class EditRecordViewController: UIViewController,UITextFieldDelegate {
         tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.tintColor = .white
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        
         viewModel.textFieldDidBeginEditingClosure = {
             DispatchQueue.main.async {[weak self] in
                 guard let self = self else { return }
                 self.navigationController?.setNavigationBarHidden(true, animated: true)
             }
+        }
+        viewModel.editAccountTypeClosure = {[weak self] in
+            guard let self = self else { return }
+            self.textFieldPickerView.data = AccountTypeManager.query()
+            self.textFieldPickerView.pickerView.reloadAllComponents()
+            self.textFieldPickerView.show()
+            //delegate
+            self.textFieldPickerView.delegate = self.viewModel
+            
         }
         viewModel.selectedDateClosure = {[weak self] in
             guard let self = self else { return }
@@ -82,6 +93,11 @@ class EditRecordViewController: UIViewController,UITextFieldDelegate {
         self.dateButton.layer.masksToBounds = true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     @IBAction func showDatePicker(_ sender: Any) {
         self.dateButton.isEnabled = false
         //layer
@@ -95,6 +111,23 @@ class EditRecordViewController: UIViewController,UITextFieldDelegate {
         datePickerView.delegate = viewModel
     }
     
+    private func createTextFieldPickerView() {
+        
+        //hide
+        textFieldPickerView.hide()
+        //addView
+        view.addSubview(textFieldPickerView)
+        
+        //constraint
+        textFieldPickerView.tintColor = .systemTeal
+        textFieldPickerView.translatesAutoresizingMaskIntoConstraints = false
+        textFieldPickerView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height*0.3).isActive = true
+        textFieldPickerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        textFieldPickerView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        view.rightAnchor.constraint(equalTo: textFieldPickerView.rightAnchor, constant: 0).isActive = true
+
+        
+    }
     private func createDatePickerView() {
         
         //hide
@@ -127,6 +160,7 @@ class EditRecordViewController: UIViewController,UITextFieldDelegate {
             }
         }
         view.endEditing(true)
+        dateButton.isEnabled = true
     }
 
 }

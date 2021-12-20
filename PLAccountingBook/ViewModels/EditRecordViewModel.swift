@@ -10,12 +10,16 @@ import UIKit
 class EditRecordViewModel : NSObject {
     
     private(set) var record:Record!
+    private(set) var accountType: [String]!
+    
     var selectedDateClosure = {}
+    var editAccountTypeClosure = {}
     var textFieldDidBeginEditingClosure = {}
     var textFieldDidEndEditing = {}
     
     init(record:Record) {
         self.record = record
+        self.accountType = AccountTypeManager.query()
     }
     
 }
@@ -27,6 +31,14 @@ extension EditRecordViewModel : DatePickerViewDelegate{
         selectedDateClosure()
     }
 }
+//MARK: - TextFieldPickerViewDelegate
+extension EditRecordViewModel : TextFieldPickerViewDelegate {
+    func selected(_ text: String) {
+        
+    }
+    
+    
+}
 
 //MARK: - UITextFieldDelegate
 extension EditRecordViewModel : UITextFieldDelegate{
@@ -34,7 +46,8 @@ extension EditRecordViewModel : UITextFieldDelegate{
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textFieldDidBeginEditingClosure()
         switch textField.tag {
-//        case 1:
+        case 1:
+            editAccountTypeClosure()
 //        case 2:
 //
         case 3:
@@ -57,5 +70,16 @@ extension EditRecordViewModel : UITextFieldDelegate{
             break
         }
         
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        // Implement your Date Time Picker initial Code here
+        switch textField.tag {
+        case 1:
+            editAccountTypeClosure()
+            return false
+        default:
+            return true
+        }
     }
 }

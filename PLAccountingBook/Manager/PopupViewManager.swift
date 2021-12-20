@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PopupView : UIView{
-    
+    func hide()
 }
 extension PopupView {
     func show() {
