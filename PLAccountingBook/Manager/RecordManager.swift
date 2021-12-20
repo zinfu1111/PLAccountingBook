@@ -57,7 +57,7 @@ class RecordManager {
             data.forEach { item in
                 result.append(Record(dataMO: item))
             }
-            return result
+            return result.sorted(by: { return $0.datetime > $1.datetime })
         } catch {
             fatalError(error.localizedDescription)
         }

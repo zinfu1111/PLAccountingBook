@@ -21,6 +21,7 @@
 		9CA47189276B9E3C0043F67A /* Ext+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA47188276B9E3C0043F67A /* Ext+Date.swift */; };
 		9CA4718B276BA2440043F67A /* Ext+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4718A276BA2440043F67A /* Ext+Int.swift */; };
 		9CA4718D276BA2AB0043F67A /* Ext+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4718C276BA2AB0043F67A /* Ext+Double.swift */; };
+		9CA47199276C81A00043F67A /* Ext+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA47198276C81A00043F67A /* Ext+UIView.swift */; };
 		9CC6707D2769F1F60060457A /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6707C2769F1F60060457A /* RecordViewController.swift */; };
 		9CC67080276A0E770060457A /* RecordTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6707F276A0E770060457A /* RecordTableViewDataSource.swift */; };
 		9CC67084276A0FB10060457A /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC67083276A0FB10060457A /* Record.swift */; };
@@ -47,6 +48,7 @@
 		9CA47188276B9E3C0043F67A /* Ext+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Date.swift"; sourceTree = "<group>"; };
 		9CA4718A276BA2440043F67A /* Ext+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Int.swift"; sourceTree = "<group>"; };
 		9CA4718C276BA2AB0043F67A /* Ext+Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Double.swift"; sourceTree = "<group>"; };
+		9CA47198276C81A00043F67A /* Ext+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+UIView.swift"; sourceTree = "<group>"; };
 		9CC6707C2769F1F60060457A /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		9CC6707F276A0E770060457A /* RecordTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewDataSource.swift; sourceTree = "<group>"; };
 		9CC67083276A0FB10060457A /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				9CA47188276B9E3C0043F67A /* Ext+Date.swift */,
 				9CA4718A276BA2440043F67A /* Ext+Int.swift */,
 				9CA4718C276BA2AB0043F67A /* Ext+Double.swift */,
+				9CA47198276C81A00043F67A /* Ext+UIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				9CC6707D2769F1F60060457A /* RecordViewController.swift in Sources */,
 				9C25642C2768F95F0029131D /* RecordViewModel.swift in Sources */,
 				9CA47189276B9E3C0043F67A /* Ext+Date.swift in Sources */,
+				9CA47199276C81A00043F67A /* Ext+UIView.swift in Sources */,
 				9CC67084276A0FB10060457A /* Record.swift in Sources */,
 				9C25642827679CB30029131D /* PLAccountingBook.xcdatamodeld in Sources */,
 			);

@@ -24,7 +24,6 @@ class RecordCell: UITableViewCell {
     }
     
     func setTagView(text:String) {
-        print(#function)
         tagView = TagView(frame: typeView.bounds)
         tagView.titleLabel.text = text
         typeView.addSubview(tagView)

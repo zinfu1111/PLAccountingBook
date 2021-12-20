@@ -24,12 +24,14 @@ class RecordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        createDatePickerView()
         hidePopupWhenTap()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        createDatePickerView()
+        tabBarController?.tabBar.isHidden = false
+        navigationController?.setNavigationBarHidden(true, animated: animated)
         viewModel = RecordViewModel()
         viewModel.selectedDateClosure = {[weak self] in
             guard let self = self else { return }
@@ -44,7 +46,6 @@ class RecordViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
         dateButtonView.layer.cornerRadius = dateButtonView.bounds.height * 0.5
         createButtonView.layer.cornerRadius = createButtonView.bounds.height * 0.5
     }
@@ -62,12 +63,20 @@ class RecordViewController: UIViewController {
         datePickerView.delegate = viewModel
     }
     
-    func updateHeaderView() {
-        self.dateLabel.text = datePickerView.datePicker.date.toString(format: "YYYY.M")
-        self.totalCost.text = "本月 \(Int(viewModel.recordData.map({$0.cost}).reduce(.zero, +)).toMoneyFormatter()) 元"
+    @IBAction func goEditRecord(_ sender: Any) {
+        let editRecordVC = self.storyboard?.instantiateViewController(withIdentifier: "\(EditRecordViewController.self)") as! EditRecordViewController
+        editRecordVC.viewModel = EditRecordViewModel(record: Record(id: 0, content: "", cost: 0, tag: "", datetime: Date()))
+        navigationController?.pushViewController(editRecordVC, animated: true)
+        
     }
+}
+
+extension RecordViewController {
     
-    func createDatePickerView() {
+    private func createDatePickerView() {
+        
+        //hide
+        datePickerView.hide()
         
         //addView
         view.addSubview(datePickerView)
@@ -81,18 +90,20 @@ class RecordViewController: UIViewController {
         view.rightAnchor.constraint(equalTo: datePickerView.rightAnchor, constant: 50).isActive = true
         
         
-        //hide
-        datePickerView.hide()
-        
     }
     
-    func updateTableView() {
+    private func updateHeaderView() {
+        self.dateLabel.text = datePickerView.datePicker.date.toString(format: "YYYY.M")
+        self.totalCost.text = "本月 \(Int(viewModel.recordData.map({$0.cost}).reduce(.zero, +)).toMoneyFormatter()) 元"
+    }
+    
+    private func updateTableView() {
         
         self.dataSource = RecordTableViewDataSource(cellIdentifier: "\(RecordCell.self)", items: self.viewModel.recordData, configCell: { cell, model in
-            cell.contentTextView.text = model.content
             cell.setTagView(text: model.tag)
-            cell.costLabel.text = "\(model.cost)元"
-            cell.dateLabel.text = "\(model.datetime.toString(format: "MM/dd"))"
+            cell.dateLabel.text = "\(model.datetime.toString(format: "MM/dd HH:mm"))"
+            cell.contentTextView.text = model.content
+            cell.costLabel.text = "\(Int(model.cost).toMoneyFormatter())元"
         })
         DispatchQueue.main.async {
             
@@ -101,13 +112,13 @@ class RecordViewController: UIViewController {
         }
     }
     
-    func hidePopupWhenTap() {
+    private func hidePopupWhenTap() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(closePopupView))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
     
-    @objc func closePopupView(){
+    @objc private func closePopupView(){
         view.subviews.forEach { view in
             if let view = view as? PopupView {
                 view.hide()
@@ -116,4 +127,3 @@ class RecordViewController: UIViewController {
         dateButton.isEnabled = true
     }
 }
-

@@ -7,16 +7,18 @@
 
 import UIKit
 
-class RecordViewModel: NSObject,DatePickerViewDelegate {
+class RecordViewModel {
 
     private(set) var recordData = [Record]()
     var selectedDateClosure = {}
     
-    override init() {
-        super.init()
+    init() {
         self.recordData = RecordManager.shared.query()
     }
     
+}
+//MARK: - DatePickerViewDelegate
+extension RecordViewModel : DatePickerViewDelegate{
     
     func selected(_ datepicker: UIDatePicker) {
         recordData = RecordManager.shared.query().filter({$0.datetime.toString(format: "YYYY.M") == datepicker.date.toString(format: "YYYY.M")})

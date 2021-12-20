@@ -16,29 +16,17 @@ class DatePickerView: UIView,PopupView {
     @IBOutlet weak var datePicker:UIDatePicker!
     var delegate:DatePickerViewDelegate?
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        loadXib()
+        loadXib(nibName: "\(DatePickerView.self)", for: type(of: self))
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        loadXib()
+        loadXib(nibName: "\(DatePickerView.self)", for: type(of: self))
     }
     
-    func loadXib(){
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: "\(DatePickerView.self)", bundle: bundle)
-        ///透過nib來取得xibView
-        let xibView = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
-        addSubview(xibView)
-        ///設置xibView的Constraint
-        xibView.translatesAutoresizingMaskIntoConstraints = false
-        xibView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        xibView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        xibView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        xibView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-    }
     
     @IBAction func selectedDate(_ sender: UIDatePicker) {
         delegate?.selected(sender)
