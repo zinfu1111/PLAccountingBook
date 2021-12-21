@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		751FE6F0133FF115136CD1D3 /* Pods_PLAccountingBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F53A9A23DF0AE58A06FBD748 /* Pods_PLAccountingBook.framework */; };
 		9C256413276798540029131D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C256412276798540029131D /* AppDelegate.swift */; };
 		9C256415276798540029131D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C256414276798540029131D /* SceneDelegate.swift */; };
 		9C25641A276798540029131D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C256418276798540029131D /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7056C0565ED05CB06D82B310 /* Pods-PLAccountingBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLAccountingBook.release.xcconfig"; path = "Target Support Files/Pods-PLAccountingBook/Pods-PLAccountingBook.release.xcconfig"; sourceTree = "<group>"; };
 		9C25640F276798540029131D /* PLAccountingBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLAccountingBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C256412276798540029131D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C256414276798540029131D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,8 @@
 		9CC67088276A11C30060457A /* RecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordCell.xib; sourceTree = "<group>"; };
 		9CC6708B276A17620060457A /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		9CC6708D276A17F10060457A /* TagView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagView.xib; sourceTree = "<group>"; };
+		A490C32BE3A35D559EF923CD /* Pods-PLAccountingBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLAccountingBook.debug.xcconfig"; path = "Target Support Files/Pods-PLAccountingBook/Pods-PLAccountingBook.debug.xcconfig"; sourceTree = "<group>"; };
+		F53A9A23DF0AE58A06FBD748 /* Pods_PLAccountingBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PLAccountingBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				751FE6F0133FF115136CD1D3 /* Pods_PLAccountingBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +91,8 @@
 			children = (
 				9C256411276798540029131D /* PLAccountingBook */,
 				9C256410276798540029131D /* Products */,
+				F2DB9A78A82BB95B4DEEDB1C /* Pods */,
+				FD5F67718C79829217CF2D4C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,6 +188,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F2DB9A78A82BB95B4DEEDB1C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A490C32BE3A35D559EF923CD /* Pods-PLAccountingBook.debug.xcconfig */,
+				7056C0565ED05CB06D82B310 /* Pods-PLAccountingBook.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FD5F67718C79829217CF2D4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F53A9A23DF0AE58A06FBD748 /* Pods_PLAccountingBook.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -188,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C256423276798560029131D /* Build configuration list for PBXNativeTarget "PLAccountingBook" */;
 			buildPhases = (
+				3E84FCB11E8123B401404FBC /* [CP] Check Pods Manifest.lock */,
 				9C25640B276798540029131D /* Sources */,
 				9C25640C276798540029131D /* Frameworks */,
 				9C25640D276798540029131D /* Resources */,
+				8D073336939C527F06C0F253 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -251,6 +278,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3E84FCB11E8123B401404FBC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PLAccountingBook-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D073336939C527F06C0F253 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PLAccountingBook/Pods-PLAccountingBook-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PLAccountingBook/Pods-PLAccountingBook-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PLAccountingBook/Pods-PLAccountingBook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9C25640B276798540029131D /* Sources */ = {
@@ -420,6 +489,7 @@
 		};
 		9C256424276798560029131D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A490C32BE3A35D559EF923CD /* Pods-PLAccountingBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -450,6 +520,7 @@
 		};
 		9C256425276798560029131D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7056C0565ED05CB06D82B310 /* Pods-PLAccountingBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

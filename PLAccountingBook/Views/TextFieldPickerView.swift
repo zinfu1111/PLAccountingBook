@@ -11,7 +11,7 @@ protocol TextFieldPickerViewDelegate {
     func selected(_ text: String)
 }
 
-class TextFieldPickerView: UIView, PopupView {
+class TextFieldPickerView: UIView {
 
     @IBOutlet weak var textField:UITextField!{
         didSet{
@@ -22,7 +22,13 @@ class TextFieldPickerView: UIView, PopupView {
         }
     }
     @IBOutlet weak var pickerView:UIPickerView!
-    var data = [String]()
+    var data = [String](){
+        didSet{
+            self.pickerView.dataSource = self
+            self.pickerView.delegate = self 
+            self.pickerView.reloadAllComponents()
+        }
+    }
     var delegate:TextFieldPickerViewDelegate?
     
     
@@ -59,6 +65,7 @@ extension TextFieldPickerView : UIPickerViewDelegate, UIPickerViewDataSource{
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
         return data[row]
     }
     

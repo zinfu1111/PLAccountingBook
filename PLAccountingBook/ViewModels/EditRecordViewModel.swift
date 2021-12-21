@@ -14,8 +14,9 @@ class EditRecordViewModel : NSObject {
     
     var selectedDateClosure = {}
     var editAccountTypeClosure = {}
-    var textFieldDidBeginEditingClosure = {}
+    var endEditAccountTypeClosure = {}
     var textFieldDidEndEditing = {}
+    var showTextFieldPickerView = false
     
     init(record:Record) {
         self.record = record
@@ -34,22 +35,15 @@ extension EditRecordViewModel : DatePickerViewDelegate{
 //MARK: - TextFieldPickerViewDelegate
 extension EditRecordViewModel : TextFieldPickerViewDelegate {
     func selected(_ text: String) {
-        
+        endEditAccountTypeClosure()
     }
-    
-    
 }
 
 //MARK: - UITextFieldDelegate
 extension EditRecordViewModel : UITextFieldDelegate{
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textFieldDidBeginEditingClosure()
         switch textField.tag {
-        case 1:
-            editAccountTypeClosure()
-//        case 2:
-//
         case 3:
             textField.text = "\(record.cost)"
         default:
@@ -60,9 +54,6 @@ extension EditRecordViewModel : UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         switch textField.tag {
-//        case 1:
-//        case 2:
-//
         case 3:
             record.cost = Double(textField.text ?? "0") ?? 0
             textField.text = Double(textField.text ?? "0")?.toMoneyFormatter()
@@ -78,6 +69,9 @@ extension EditRecordViewModel : UITextFieldDelegate{
         case 1:
             editAccountTypeClosure()
             return false
+        case 2,3:
+            return !showTextFieldPickerView
+
         default:
             return true
         }
