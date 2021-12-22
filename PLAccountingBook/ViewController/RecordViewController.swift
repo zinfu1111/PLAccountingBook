@@ -30,8 +30,6 @@ class RecordViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tabBarController?.tabBar.isHidden = false
-        navigationController?.setNavigationBarHidden(true, animated: animated)
         viewModel = RecordViewModel()
         viewModel.selectedDateClosure = {[weak self] in
             guard let self = self else { return }
@@ -46,6 +44,8 @@ class RecordViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+        navigationController?.setNavigationBarHidden(true, animated: animated)
         dateButtonView.layer.cornerRadius = dateButtonView.bounds.height * 0.5
         createButtonView.layer.cornerRadius = createButtonView.bounds.height * 0.5
     }
@@ -84,7 +84,7 @@ extension RecordViewController {
         //constraint
         datePickerView.tintColor = .systemTeal
         datePickerView.translatesAutoresizingMaskIntoConstraints = false
-        datePickerView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        datePickerView.heightAnchor.constraint(equalToConstant: 350).isActive = true
         datePickerView.topAnchor.constraint(equalTo: dateButtonView.bottomAnchor, constant: 0).isActive = true
         datePickerView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50).isActive = true
         view.rightAnchor.constraint(equalTo: datePickerView.rightAnchor, constant: 50).isActive = true
@@ -98,18 +98,35 @@ extension RecordViewController {
     }
     
     private func updateTableView() {
-        
+        self.viewModel.updateRecord()
+        self.setTableDataSource()
+        DispatchQueue.main.async {
+            self.tableView.delegate = self.dataSource
+            self.tableView.dataSource = self.dataSource
+            self.tableView.reloadData()
+        }
+    }
+    
+    private func setTableDataSource(){
         self.dataSource = RecordTableViewDataSource(cellIdentifier: "\(RecordCell.self)", items: self.viewModel.recordData, configCell: { cell, model in
-            cell.setTagView(text: model.tag)
+            cell.tagLabel.text = model.tag
+            cell.setTagView(text: String(model.tag.first!))
             cell.dateLabel.text = "\(model.datetime.toString(format: "MM/dd HH:mm"))"
             cell.contentTextView.text = model.content
             cell.costLabel.text = "\(Int(model.cost).toMoneyFormatter())元"
         })
-        DispatchQueue.main.async {
-            
-            self.tableView.dataSource = self.dataSource
-            self.tableView.reloadData()
+        self.dataSource.editClosure = { item in
+            let editRecordVC = self.storyboard?.instantiateViewController(withIdentifier: "\(EditRecordViewController.self)") as! EditRecordViewController
+            editRecordVC.viewModel = EditRecordViewModel(record: item)
+            self.navigationController?.pushViewController(editRecordVC, animated: true)
         }
+        self.dataSource.deleteClosure = { item in
+            RecordManager.shared.delete(with: item)
+            DispatchQueue.main.async {
+                self.updateTableView()
+            }
+        }
+        
     }
     
     private func hidePopupWhenTap() {

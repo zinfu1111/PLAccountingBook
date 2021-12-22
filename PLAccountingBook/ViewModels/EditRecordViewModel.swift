@@ -23,6 +23,22 @@ class EditRecordViewModel : NSObject {
         self.accountType = AccountTypeManager.query()
     }
     
+    func setAccountType(text: String) {
+        record.tag = text
+        if AccountTypeManager.query().filter({$0 == text}).count == 0 {
+            AccountTypeManager.addNewTypes(with: [text])
+        }
+    }
+    
+    func save(by record:Record) {
+        
+        if self.record.id == 0 {
+            RecordManager.shared.insert(with: self.record)
+        }else{
+            RecordManager.shared.update(with: record)
+        }
+    }
+    
 }
 //MARK: - DatePickerViewDelegate
 extension EditRecordViewModel : DatePickerViewDelegate{
@@ -54,6 +70,8 @@ extension EditRecordViewModel : UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         switch textField.tag {
+        case 2:
+            record.content = textField.text!
         case 3:
             record.cost = Double(textField.text ?? "0") ?? 0
             textField.text = Double(textField.text ?? "0")?.toMoneyFormatter()

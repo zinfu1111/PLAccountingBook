@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -60,12 +60,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9M0-lC-45d">
+                                <rect key="frame" x="60" y="541.5" width="31" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="9M0-lC-45d" firstAttribute="centerY" secondItem="yfv-jt-pd4" secondAttribute="centerY" id="02S-6K-9GF"/>
                             <constraint firstItem="dP1-Ng-MfN" firstAttribute="leading" secondItem="tSg-34-VCz" secondAttribute="trailing" constant="10" id="2OM-mn-dED"/>
                             <constraint firstItem="tSg-34-VCz" firstAttribute="leading" secondItem="ee3-8h-qYJ" secondAttribute="leading" id="32W-rx-kC8"/>
                             <constraint firstAttribute="trailing" secondItem="yfv-jt-pd4" secondAttribute="trailing" id="IZw-65-c6f"/>
+                            <constraint firstItem="9M0-lC-45d" firstAttribute="leading" secondItem="5wh-uv-lB5" secondAttribute="leading" id="Nnv-If-5Y5"/>
                             <constraint firstAttribute="bottom" secondItem="yfv-jt-pd4" secondAttribute="bottom" constant="5" id="TKT-gd-m2D"/>
                             <constraint firstItem="yfv-jt-pd4" firstAttribute="top" secondItem="dP1-Ng-MfN" secondAttribute="bottom" id="cKU-JB-AR6"/>
                             <constraint firstItem="tSg-34-VCz" firstAttribute="centerY" secondItem="ee3-8h-qYJ" secondAttribute="centerY" id="f9w-Zj-erM"/>
@@ -90,6 +98,7 @@
                 <outlet property="contentTextView" destination="5wh-uv-lB5" id="pt6-dr-hrU"/>
                 <outlet property="costLabel" destination="yfv-jt-pd4" id="NoV-0U-1j3"/>
                 <outlet property="dateLabel" destination="YTb-fk-NHd" id="Gfg-PC-f04"/>
+                <outlet property="tagLabel" destination="9M0-lC-45d" id="ESg-fb-Pgf"/>
                 <outlet property="typeView" destination="tSg-34-VCz" id="XgY-tV-BgA"/>
             </connections>
             <point key="canvasLocation" x="181.8840579710145" y="111.83035714285714"/>

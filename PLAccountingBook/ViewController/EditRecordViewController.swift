@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class EditRecordViewController: UIViewController,UITextFieldDelegate {
+class EditRecordViewController: UIViewController {
 
     @IBOutlet weak var dateButton: UIButton!
     @IBOutlet weak var dateLabel: UILabel!
@@ -56,6 +56,7 @@ class EditRecordViewController: UIViewController,UITextFieldDelegate {
         // Do any additional setup after loading the view.
         createTextFieldPickerView()
         createDatePickerView()
+        setupViewModelClosure()
         hidePopupWhenTap()
     }
     
@@ -65,35 +66,22 @@ class EditRecordViewController: UIViewController,UITextFieldDelegate {
         navigationController?.navigationBar.tintColor = .white
         navigationController?.setNavigationBarHidden(false, animated: animated)
         
-        viewModel.editAccountTypeClosure = {[weak self] in
-            guard let self = self else { return }
-            let data = AccountTypeManager.query()
-            self.textFieldPickerView.data = data
-            self.textFieldPickerViewShowOrHide(true)
-            
-            //delegate
-            self.textFieldPickerView.delegate = self.viewModel
-            
-        }
-        viewModel.endEditAccountTypeClosure = {[weak self] in
-            guard let self = self else { return }
-            self.textFieldPickerViewShowOrHide(false)
-        }
-        
-        
-        
-        viewModel.selectedDateClosure = {[weak self] in
-            guard let self = self else { return }
-            self.dateButton.isEnabled = true
-            self.dateLabel.text = "\(self.viewModel.record.datetime.toString(format: "YYYY/M/d HH:mm"))"
-            
-        }
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        tabBarController?.tabBar.isHidden = true
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.setNavigationBarHidden(false, animated: true)
         self.dateButton.layer.cornerRadius = self.dateButton.bounds.width * 0.5
         self.dateButton.layer.masksToBounds = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -114,6 +102,45 @@ class EditRecordViewController: UIViewController,UITextFieldDelegate {
         datePickerView.delegate = viewModel
     }
     
+    @IBAction func save(_ sender: Any){
+        let record = Record(id: viewModel.record.id, content: contentTextField.text!, cost: viewModel.record.cost, tag: accountTypeTextField.text!, datetime: datePickerView.datePicker.date)
+        
+        viewModel.save(by: record)
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func cancel(_ sender: Any){
+        navigationController?.popViewController(animated: true)
+    }
+    
+}
+
+extension EditRecordViewController {
+    
+    private func setupViewModelClosure(){
+        
+        viewModel.editAccountTypeClosure = {[weak self] in
+            guard let self = self else { return }
+            let data = AccountTypeManager.query()
+            self.textFieldPickerView.data = data
+            self.textFieldPickerViewShowOrHide(true)
+            
+            //delegate
+            self.textFieldPickerView.delegate = self.viewModel
+            
+        }
+        viewModel.endEditAccountTypeClosure = {[weak self] in
+            guard let self = self else { return }
+            self.textFieldPickerViewShowOrHide(false)
+        }
+        viewModel.selectedDateClosure = {[weak self] in
+            guard let self = self else { return }
+            self.dateButton.isEnabled = true
+            self.dateLabel.text = "\(self.viewModel.record.datetime.toString(format: "YYYY/M/d HH:mm"))"
+            
+        }
+    }
+    
     private func createTextFieldPickerView() {
         
         //hide
@@ -130,7 +157,7 @@ class EditRecordViewController: UIViewController,UITextFieldDelegate {
         textFieldPickerView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         view.rightAnchor.constraint(equalTo: textFieldPickerView.rightAnchor, constant: 0).isActive = true
 
-        
+        textFieldPickerView.textField.text = viewModel.record.tag
     }
     
     private func createDatePickerView() {
@@ -149,6 +176,7 @@ class EditRecordViewController: UIViewController,UITextFieldDelegate {
         datePickerView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50).isActive = true
         view.rightAnchor.constraint(equalTo: datePickerView.rightAnchor, constant: 50).isActive = true
         
+        dateLabel.text = datePickerView.datePicker.date.toString(format: "yyyy/M/d HH:mm")
         
     }
     
@@ -175,10 +203,9 @@ class EditRecordViewController: UIViewController,UITextFieldDelegate {
                     
                     self.textFieldPickerView.isHidden = true
                     self.viewModel.showTextFieldPickerView = false
+                    
                     self.accountTypeTextField.text = self.textFieldPickerView.textField.text
-                    if AccountTypeManager.query().filter({$0 == self.textFieldPickerView.textField.text!}).count == 0 {
-                        AccountTypeManager.addNewTypes(with: [ self.textFieldPickerView.textField.text!])
-                    }
+                    self.viewModel.setAccountType(text: self.textFieldPickerView.textField.text!)
                 }
             }
 

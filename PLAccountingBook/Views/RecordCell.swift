@@ -13,6 +13,7 @@ class RecordCell: UITableViewCell {
     @IBOutlet weak var typeView:UIView!
     @IBOutlet weak var dateLabel:UILabel!
     @IBOutlet weak var costLabel:UILabel!
+    @IBOutlet weak var tagLabel: UILabel!
     
     var tagView: TagView!
     
@@ -21,6 +22,15 @@ class RecordCell: UITableViewCell {
         typeView.layer.cornerRadius = typeView.bounds.width * 0.5
         typeView.layer.masksToBounds = true
         tagView.frame = typeView.bounds
+        
+        tagLabel.backgroundColor = .clear
+        tagLabel.layer.borderColor = UIColor.systemTeal.cgColor
+        tagLabel.layer.borderWidth = 1
+        tagLabel.layer.masksToBounds = true
+        tagLabel.layer.cornerRadius = tagLabel.bounds.height * 0.5
+        tagLabel.textColor = .systemTeal
+        tagLabel.alpha = 0.8
+        
     }
     
     func setTagView(text:String) {

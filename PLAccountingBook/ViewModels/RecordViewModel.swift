@@ -16,6 +16,10 @@ class RecordViewModel {
         self.recordData = RecordManager.shared.query()
     }
     
+    func updateRecord() {
+        self.recordData = RecordManager.shared.query()
+    }
+    
 }
 //MARK: - DatePickerViewDelegate
 extension RecordViewModel : DatePickerViewDelegate{
