@@ -36,6 +36,8 @@
 		9CC6708A276A11C30060457A /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC67088276A11C30060457A /* RecordCell.xib */; };
 		9CC6708C276A17620060457A /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6708B276A17620060457A /* TagView.swift */; };
 		9CC6708E276A17F10060457A /* TagView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC6708D276A17F10060457A /* TagView.xib */; };
+		DA48B3EF27732ADE0076E9F0 /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48B3EE27732ADE0076E9F0 /* AnalyticsViewController.swift */; };
+		DA48B3F127732E750076E9F0 /* AnalyticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48B3F027732E750076E9F0 /* AnalyticsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		9CC6708B276A17620060457A /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		9CC6708D276A17F10060457A /* TagView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagView.xib; sourceTree = "<group>"; };
 		A490C32BE3A35D559EF923CD /* Pods-PLAccountingBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLAccountingBook.debug.xcconfig"; path = "Target Support Files/Pods-PLAccountingBook/Pods-PLAccountingBook.debug.xcconfig"; sourceTree = "<group>"; };
+		DA48B3EE27732ADE0076E9F0 /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
+		DA48B3F027732E750076E9F0 /* AnalyticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewModel.swift; sourceTree = "<group>"; };
 		F53A9A23DF0AE58A06FBD748 /* Pods_PLAccountingBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PLAccountingBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -142,6 +146,7 @@
 				9C25642B2768F95F0029131D /* RecordViewModel.swift */,
 				9CC6707F276A0E770060457A /* RecordTableViewDataSource.swift */,
 				9CA4719C276C83680043F67A /* EditRecordViewModel.swift */,
+				DA48B3F027732E750076E9F0 /* AnalyticsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 			children = (
 				9CC6707C2769F1F60060457A /* RecordViewController.swift */,
 				9CA47194276C79C20043F67A /* EditRecordViewController.swift */,
+				DA48B3EE27732ADE0076E9F0 /* AnalyticsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -194,7 +200,6 @@
 				A490C32BE3A35D559EF923CD /* Pods-PLAccountingBook.debug.xcconfig */,
 				7056C0565ED05CB06D82B310 /* Pods-PLAccountingBook.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -327,7 +332,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C25642A2767A0BE0029131D /* RecordManager.swift in Sources */,
+				DA48B3F127732E750076E9F0 /* AnalyticsViewModel.swift in Sources */,
 				9CA4718D276BA2AB0043F67A /* Ext+Double.swift in Sources */,
+				DA48B3EF27732ADE0076E9F0 /* AnalyticsViewController.swift in Sources */,
 				9CC6708C276A17620060457A /* TagView.swift in Sources */,
 				9CC67080276A0E770060457A /* RecordTableViewDataSource.swift in Sources */,
 				9CA47184276B32720043F67A /* PopupViewManager.swift in Sources */,

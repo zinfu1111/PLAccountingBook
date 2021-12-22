@@ -126,6 +126,22 @@
             </objects>
             <point key="canvasLocation" x="1976.8115942028987" y="81.026785714285708"/>
         </scene>
+        <!--Analytics View Controller-->
+        <scene sceneID="YIv-B5-M1l">
+            <objects>
+                <viewController storyboardIdentifier="AnalyticsViewController" id="Ctg-5Q-IOZ" customClass="AnalyticsViewController" customModule="PLAccountingBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C5q-fO-dky">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Pcn-f9-sT3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hOq-eP-EAZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p4I-11-mPD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1956" y="803"/>
+        </scene>
         <!--Edit Record View Controller-->
         <scene sceneID="XvV-jo-ZDp">
             <objects>
@@ -275,7 +291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05n-oE-mBU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2741.5999999999999" y="530.28485757121439"/>
+            <point key="canvasLocation" x="2815" y="82"/>
         </scene>
         <!--紀錄-->
         <scene sceneID="SHC-R5-65G">
@@ -310,21 +326,45 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <color key="tintColor" systemColor="tintColor"/>
+                        <color key="barTintColor" systemColor="systemOrangeColor"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="FZo-3c-W7v" kind="relationship" relationship="viewControllers" id="0GM-6S-lKe"/>
+                        <segue destination="FUQ-52-7Bv" kind="relationship" relationship="viewControllers" id="2mg-2X-SAf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QC4-Zq-9eD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="159.42028985507247" y="82.366071428571431"/>
         </scene>
+        <!--分析-->
+        <scene sceneID="IBb-SP-VdC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FUQ-52-7Bv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="分析" image="menucard.fill" catalog="system" selectedImage="menucard.fill" id="BI4-ZJ-chu">
+                        <color key="badgeColor" systemColor="systemOrangeColor"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rq1-lh-XFu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ctg-5Q-IOZ" kind="relationship" relationship="rootViewController" id="jt0-Fr-hw8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rzw-hh-cZb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1017" y="803"/>
+        </scene>
     </scenes>
     <resources>
         <image name="book.circle.fill" catalog="system" width="128" height="121"/>
         <image name="calendar.badge.clock" catalog="system" width="128" height="108"/>
         <image name="calendar.circle" catalog="system" width="128" height="121"/>
+        <image name="menucard.fill" catalog="system" width="106" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
