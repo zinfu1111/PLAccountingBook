@@ -24,8 +24,8 @@
 		9CA47189276B9E3C0043F67A /* Ext+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA47188276B9E3C0043F67A /* Ext+Date.swift */; };
 		9CA4718B276BA2440043F67A /* Ext+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4718A276BA2440043F67A /* Ext+Int.swift */; };
 		9CA4718D276BA2AB0043F67A /* Ext+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4718C276BA2AB0043F67A /* Ext+Double.swift */; };
-		9CA47191276C65A70043F67A /* AccountTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA47190276C65A70043F67A /* AccountTypeManager.swift */; };
-		9CA47193276C672E0043F67A /* AccountType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CA47192276C672E0043F67A /* AccountType.plist */; };
+		9CA47191276C65A70043F67A /* TagManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA47190276C65A70043F67A /* TagManager.swift */; };
+		9CA47193276C672E0043F67A /* Tag.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CA47192276C672E0043F67A /* Tag.plist */; };
 		9CA47195276C79C20043F67A /* EditRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA47194276C79C20043F67A /* EditRecordViewController.swift */; };
 		9CA47199276C81A00043F67A /* Ext+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA47198276C81A00043F67A /* Ext+UIView.swift */; };
 		9CA4719D276C83680043F67A /* EditRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4719C276C83680043F67A /* EditRecordViewModel.swift */; };
@@ -38,6 +38,9 @@
 		9CC6708E276A17F10060457A /* TagView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC6708D276A17F10060457A /* TagView.xib */; };
 		DA48B3EF27732ADE0076E9F0 /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48B3EE27732ADE0076E9F0 /* AnalyticsViewController.swift */; };
 		DA48B3F127732E750076E9F0 /* AnalyticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48B3F027732E750076E9F0 /* AnalyticsViewModel.swift */; };
+		DA48B3FA27741D600076E9F0 /* TagCostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48B3F827741D600076E9F0 /* TagCostCell.swift */; };
+		DA48B3FB27741D600076E9F0 /* TagCostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA48B3F927741D600076E9F0 /* TagCostCell.xib */; };
+		DA4C746B27755A10001EB642 /* AnalyticsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4C746A27755A10001EB642 /* AnalyticsTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,8 +63,8 @@
 		9CA47188276B9E3C0043F67A /* Ext+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Date.swift"; sourceTree = "<group>"; };
 		9CA4718A276BA2440043F67A /* Ext+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Int.swift"; sourceTree = "<group>"; };
 		9CA4718C276BA2AB0043F67A /* Ext+Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Double.swift"; sourceTree = "<group>"; };
-		9CA47190276C65A70043F67A /* AccountTypeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTypeManager.swift; sourceTree = "<group>"; };
-		9CA47192276C672E0043F67A /* AccountType.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AccountType.plist; sourceTree = "<group>"; };
+		9CA47190276C65A70043F67A /* TagManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagManager.swift; sourceTree = "<group>"; };
+		9CA47192276C672E0043F67A /* Tag.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Tag.plist; sourceTree = "<group>"; };
 		9CA47194276C79C20043F67A /* EditRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecordViewController.swift; sourceTree = "<group>"; };
 		9CA47198276C81A00043F67A /* Ext+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+UIView.swift"; sourceTree = "<group>"; };
 		9CA4719C276C83680043F67A /* EditRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecordViewModel.swift; sourceTree = "<group>"; };
@@ -75,6 +78,9 @@
 		A490C32BE3A35D559EF923CD /* Pods-PLAccountingBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLAccountingBook.debug.xcconfig"; path = "Target Support Files/Pods-PLAccountingBook/Pods-PLAccountingBook.debug.xcconfig"; sourceTree = "<group>"; };
 		DA48B3EE27732ADE0076E9F0 /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
 		DA48B3F027732E750076E9F0 /* AnalyticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewModel.swift; sourceTree = "<group>"; };
+		DA48B3F827741D600076E9F0 /* TagCostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCostCell.swift; sourceTree = "<group>"; };
+		DA48B3F927741D600076E9F0 /* TagCostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCostCell.xib; sourceTree = "<group>"; };
+		DA4C746A27755A10001EB642 /* AnalyticsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTableViewDataSource.swift; sourceTree = "<group>"; };
 		F53A9A23DF0AE58A06FBD748 /* Pods_PLAccountingBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PLAccountingBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -122,7 +128,7 @@
 				9C256418276798540029131D /* Main.storyboard */,
 				9C25641B276798560029131D /* Assets.xcassets */,
 				9C25641D276798560029131D /* LaunchScreen.storyboard */,
-				9CA47192276C672E0043F67A /* AccountType.plist */,
+				9CA47192276C672E0043F67A /* Tag.plist */,
 				9C256420276798560029131D /* Info.plist */,
 				9C25642627679CB30029131D /* PLAccountingBook.xcdatamodeld */,
 			);
@@ -147,6 +153,7 @@
 				9CC6707F276A0E770060457A /* RecordTableViewDataSource.swift */,
 				9CA4719C276C83680043F67A /* EditRecordViewModel.swift */,
 				DA48B3F027732E750076E9F0 /* AnalyticsViewModel.swift */,
+				DA4C746A27755A10001EB642 /* AnalyticsTableViewDataSource.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -174,7 +181,7 @@
 			children = (
 				9C2564292767A0BE0029131D /* RecordManager.swift */,
 				9CA47183276B32720043F67A /* PopupViewManager.swift */,
-				9CA47190276C65A70043F67A /* AccountTypeManager.swift */,
+				9CA47190276C65A70043F67A /* TagManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -190,6 +197,8 @@
 				9CC67088276A11C30060457A /* RecordCell.xib */,
 				9CC6708B276A17620060457A /* TagView.swift */,
 				9CC6708D276A17F10060457A /* TagView.xib */,
+				DA48B3F827741D600076E9F0 /* TagCostCell.swift */,
+				DA48B3F927741D600076E9F0 /* TagCostCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -271,8 +280,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA48B3FB27741D600076E9F0 /* TagCostCell.xib in Resources */,
 				9CA4717E276B10B00043F67A /* DatePickerView.xib in Resources */,
-				9CA47193276C672E0043F67A /* AccountType.plist in Resources */,
+				9CA47193276C672E0043F67A /* Tag.plist in Resources */,
 				9C75AE6F2770582F00A699FB /* TextFieldPickerView.xib in Resources */,
 				9C25641F276798560029131D /* LaunchScreen.storyboard in Resources */,
 				9CC6708E276A17F10060457A /* TagView.xib in Resources */,
@@ -341,18 +351,20 @@
 				9CA47180276B170C0043F67A /* DatePickerView.swift in Sources */,
 				9CA4718B276BA2440043F67A /* Ext+Int.swift in Sources */,
 				9C256413276798540029131D /* AppDelegate.swift in Sources */,
+				DA48B3FA27741D600076E9F0 /* TagCostCell.swift in Sources */,
 				9C256415276798540029131D /* SceneDelegate.swift in Sources */,
 				9CC67089276A11C30060457A /* RecordCell.swift in Sources */,
 				9C75AE712770597200A699FB /* TextFieldPickerView.swift in Sources */,
 				9CC6707D2769F1F60060457A /* RecordViewController.swift in Sources */,
 				9CA4719D276C83680043F67A /* EditRecordViewModel.swift in Sources */,
 				9CA47195276C79C20043F67A /* EditRecordViewController.swift in Sources */,
-				9CA47191276C65A70043F67A /* AccountTypeManager.swift in Sources */,
+				9CA47191276C65A70043F67A /* TagManager.swift in Sources */,
 				9C25642C2768F95F0029131D /* RecordViewModel.swift in Sources */,
 				9CA47189276B9E3C0043F67A /* Ext+Date.swift in Sources */,
 				9CA47199276C81A00043F67A /* Ext+UIView.swift in Sources */,
 				9CC67084276A0FB10060457A /* Record.swift in Sources */,
 				9C25642827679CB30029131D /* PLAccountingBook.xcdatamodeld in Sources */,
+				DA4C746B27755A10001EB642 /* AnalyticsTableViewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +517,7 @@
 				DEVELOPMENT_TEAM = 5K2D8EVZ5V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PLAccountingBook/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "鼠錢聚樂簿";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -536,6 +549,7 @@
 				DEVELOPMENT_TEAM = 5K2D8EVZ5V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PLAccountingBook/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "鼠錢聚樂簿";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

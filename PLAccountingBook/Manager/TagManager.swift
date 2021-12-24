@@ -7,20 +7,20 @@
 
 import Foundation
 
-struct AccountTypeManager {
+struct TagManager {
     
     static func createBaseData() {
-        let url = Bundle.main.url(forResource: "AccountType", withExtension: "plist")!
+        let url = Bundle.main.url(forResource: "Tag", withExtension: "plist")!
         
         
         guard let data = try? Data(contentsOf: url),
-              let accountTypes = try? PropertyListDecoder().decode([String].self, from: data) else {
+              let tags = try? PropertyListDecoder().decode([String].self, from: data) else {
                   return
                   
               }
         
-        if accountTypes.count > self.query().count {
-            self.addNewTypes(with: accountTypes)
+        if tags.count > self.query().count {
+            self.addNewTypes(with: tags)
         }
         
         
@@ -29,10 +29,10 @@ struct AccountTypeManager {
     static func query() -> [String] {
         
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
-        let url = documentsDirectory.appendingPathComponent("AccountType.plist")
+        let url = documentsDirectory.appendingPathComponent("Tag.plist")
         
-        if let data = try? Data(contentsOf: url), let accountTypes = try? PropertyListDecoder().decode([String].self, from: data) {
-            return accountTypes
+        if let data = try? Data(contentsOf: url), let tags = try? PropertyListDecoder().decode([String].self, from: data) {
+            return tags
         }
         return []
     }
@@ -44,7 +44,7 @@ struct AccountTypeManager {
         
         do {
             let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
-            let url = documentsDirectory.appendingPathComponent("AccountType.plist")
+            let url = documentsDirectory.appendingPathComponent("Tag.plist")
             
             let writeData = try PropertyListEncoder().encode(originData)
             try writeData.write(to: url)

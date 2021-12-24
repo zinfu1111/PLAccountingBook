@@ -133,14 +133,85 @@
                     <view key="view" contentMode="scaleToFill" id="C5q-fO-dky">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7YC-zo-WB3">
+                                <rect key="frame" x="0.0" y="44" width="375" height="200"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qKm-Jp-gVp">
+                                        <rect key="frame" x="37.5" y="40" width="300" height="120"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQy-hU-0gF">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="eQy-hU-0gF" secondAttribute="height" multiplier="1:1" id="mMy-wc-Xnr"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7wx-E7-gCY">
+                                                <rect key="frame" x="130" y="4.5" width="170" height="111"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021年" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pG-54-IB9">
+                                                        <rect key="frame" x="0.0" y="0.0" width="170" height="35"/>
+                                                        <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="25"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFZ-Na-d5W">
+                                                        <rect key="frame" x="0.0" y="45" width="170" height="35"/>
+                                                        <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="25"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支出：$0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6H-yd-Yhk">
+                                                        <rect key="frame" x="0.0" y="90" width="170" height="21"/>
+                                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="15"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstItem="qKm-Jp-gVp" firstAttribute="height" secondItem="7YC-zo-WB3" secondAttribute="height" multiplier="0.6" id="D6J-PZ-Xh8"/>
+                                    <constraint firstAttribute="height" constant="200" id="htC-cH-Cge"/>
+                                    <constraint firstItem="qKm-Jp-gVp" firstAttribute="centerX" secondItem="7YC-zo-WB3" secondAttribute="centerX" id="iPh-BJ-iC1"/>
+                                    <constraint firstItem="qKm-Jp-gVp" firstAttribute="centerY" secondItem="7YC-zo-WB3" secondAttribute="centerY" id="izJ-K1-0Dm"/>
+                                    <constraint firstItem="qKm-Jp-gVp" firstAttribute="width" secondItem="7YC-zo-WB3" secondAttribute="width" multiplier="0.8" id="pzk-py-2N8"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TfB-TS-Mde">
+                                <rect key="frame" x="0.0" y="244" width="375" height="423"/>
+                                <color key="backgroundColor" red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Pcn-f9-sT3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7YC-zo-WB3" firstAttribute="trailing" secondItem="Pcn-f9-sT3" secondAttribute="trailing" id="7Ca-3n-N2S"/>
+                            <constraint firstAttribute="bottom" secondItem="TfB-TS-Mde" secondAttribute="bottom" id="7IR-or-Zxd"/>
+                            <constraint firstItem="TfB-TS-Mde" firstAttribute="leading" secondItem="Pcn-f9-sT3" secondAttribute="leading" id="7og-X6-orO"/>
+                            <constraint firstItem="7YC-zo-WB3" firstAttribute="top" secondItem="Pcn-f9-sT3" secondAttribute="top" id="Bzu-NR-LeW"/>
+                            <constraint firstItem="TfB-TS-Mde" firstAttribute="top" secondItem="7YC-zo-WB3" secondAttribute="bottom" id="TE9-Lq-1LS"/>
+                            <constraint firstItem="Pcn-f9-sT3" firstAttribute="trailing" secondItem="TfB-TS-Mde" secondAttribute="trailing" id="nNu-j7-SgZ"/>
+                            <constraint firstItem="7YC-zo-WB3" firstAttribute="leading" secondItem="Pcn-f9-sT3" secondAttribute="leading" id="zeS-er-4Hb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hOq-eP-EAZ"/>
+                    <connections>
+                        <outlet property="chartView" destination="eQy-hU-0gF" id="FS2-MJ-s1L"/>
+                        <outlet property="headerView" destination="7YC-zo-WB3" id="dSP-85-Twu"/>
+                        <outlet property="monthLabel" destination="rFZ-Na-d5W" id="HAV-oT-et3"/>
+                        <outlet property="tableView" destination="TfB-TS-Mde" id="JT4-lQ-pig"/>
+                        <outlet property="totalCostLabel" destination="J6H-yd-Yhk" id="a7E-bj-PrC"/>
+                        <outlet property="yearLabel" destination="0pG-54-IB9" id="bVf-7i-b6g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p4I-11-mPD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1956" y="803"/>
+            <point key="canvasLocation" x="1956" y="843.32833583208401"/>
         </scene>
         <!--Edit Record View Controller-->
         <scene sceneID="XvV-jo-ZDp">
@@ -282,22 +353,22 @@
                     </view>
                     <navigationItem key="navigationItem" id="UIW-uR-UAn"/>
                     <connections>
-                        <outlet property="accountTypeTextField" destination="grW-Js-iEc" id="DtZ-P2-qFY"/>
                         <outlet property="contentTextField" destination="z8F-RE-D6y" id="HVb-Og-6HK"/>
                         <outlet property="costTextField" destination="9pH-bk-4M6" id="qWB-8B-9WS"/>
                         <outlet property="dateButton" destination="w9B-sA-nDf" id="QBW-k0-V8d"/>
                         <outlet property="dateLabel" destination="8of-M0-lqR" id="jeA-S5-7hg"/>
+                        <outlet property="tagTextField" destination="grW-Js-iEc" id="1on-gF-KGh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05n-oE-mBU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2815" y="82"/>
         </scene>
-        <!--紀錄-->
+        <!--月紀錄-->
         <scene sceneID="SHC-R5-65G">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FZo-3c-W7v" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="紀錄" image="book.circle.fill" catalog="system" selectedImage="book.circle.fill" id="XFI-dQ-w2K">
+                    <tabBarItem key="tabBarItem" title="月紀錄" image="book.circle.fill" catalog="system" selectedImage="book.circle.fill" id="XFI-dQ-w2K">
                         <color key="badgeColor" systemColor="systemOrangeColor"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -338,11 +409,11 @@
             </objects>
             <point key="canvasLocation" x="159.42028985507247" y="82.366071428571431"/>
         </scene>
-        <!--分析-->
+        <!--月分析-->
         <scene sceneID="IBb-SP-VdC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FUQ-52-7Bv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="分析" image="menucard.fill" catalog="system" selectedImage="menucard.fill" id="BI4-ZJ-chu">
+                    <tabBarItem key="tabBarItem" title="月分析" image="chart.pie.fill" catalog="system" selectedImage="chart.pie.fill" id="BI4-ZJ-chu">
                         <color key="badgeColor" systemColor="systemOrangeColor"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -357,14 +428,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rzw-hh-cZb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1017" y="803"/>
+            <point key="canvasLocation" x="1068" y="843"/>
         </scene>
     </scenes>
     <resources>
         <image name="book.circle.fill" catalog="system" width="128" height="121"/>
         <image name="calendar.badge.clock" catalog="system" width="128" height="108"/>
         <image name="calendar.circle" catalog="system" width="128" height="121"/>
-        <image name="menucard.fill" catalog="system" width="106" height="128"/>
+        <image name="chart.pie.fill" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

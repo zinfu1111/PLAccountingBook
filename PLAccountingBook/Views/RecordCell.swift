@@ -19,8 +19,6 @@ class RecordCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        typeView.layer.cornerRadius = typeView.bounds.width * 0.5
-        typeView.layer.masksToBounds = true
         tagView.frame = typeView.bounds
         
         tagLabel.backgroundColor = .clear

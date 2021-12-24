@@ -10,23 +10,23 @@ import UIKit
 class EditRecordViewModel : NSObject {
     
     private(set) var record:Record!
-    private(set) var accountType: [String]!
+    private(set) var tags: [String]!
     
     var selectedDateClosure = {}
-    var editAccountTypeClosure = {}
-    var endEditAccountTypeClosure = {}
+    var editTagClosure = {}
+    var endEditTagClosure = {}
     var textFieldDidEndEditing = {}
     var showTextFieldPickerView = false
     
     init(record:Record) {
         self.record = record
-        self.accountType = AccountTypeManager.query()
+        self.tags = TagManager.query()
     }
     
-    func setAccountType(text: String) {
+    func setTag(text: String) {
         record.tag = text
-        if AccountTypeManager.query().filter({$0 == text}).count == 0 {
-            AccountTypeManager.addNewTypes(with: [text])
+        if TagManager.query().filter({$0 == text}).count == 0 {
+            TagManager.addNewTypes(with: [text])
         }
     }
     
@@ -51,7 +51,7 @@ extension EditRecordViewModel : DatePickerViewDelegate{
 //MARK: - TextFieldPickerViewDelegate
 extension EditRecordViewModel : TextFieldPickerViewDelegate {
     func selected(_ text: String) {
-        endEditAccountTypeClosure()
+        endEditTagClosure()
     }
 }
 
@@ -85,7 +85,7 @@ extension EditRecordViewModel : UITextFieldDelegate{
         // Implement your Date Time Picker initial Code here
         switch textField.tag {
         case 1:
-            editAccountTypeClosure()
+            editTagClosure()
             return false
         case 2,3:
             return !showTextFieldPickerView

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,16 +21,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gPg-bz-xOM">
-                    <rect key="frame" x="10" y="5" width="300" height="25"/>
+                    <rect key="frame" x="10" y="5" width="300" height="40"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GWu-rc-EcM">
-                            <rect key="frame" x="0.0" y="0.0" width="265" height="25"/>
+                            <rect key="frame" x="0.0" y="0.5" width="265" height="39.5"/>
                             <color key="textColor" systemColor="systemTealColor"/>
                             <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="20"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1KL-Ar-bCh">
-                            <rect key="frame" x="275" y="0.0" width="25" height="25"/>
+                            <rect key="frame" x="275" y="7.5" width="25" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="1KL-Ar-bCh" secondAttribute="height" multiplier="1:1" id="57v-iM-lbO"/>
                             </constraints>
@@ -42,9 +42,12 @@
                             </connections>
                         </button>
                     </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Q4H-aI-tel"/>
+                    </constraints>
                 </stackView>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMh-MK-F2K">
-                    <rect key="frame" x="0.0" y="40" width="320" height="160"/>
+                    <rect key="frame" x="0.0" y="55" width="320" height="145"/>
                 </pickerView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

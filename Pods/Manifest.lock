@@ -1,20 +1,30 @@
 PODS:
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
+  - DropDown (2.3.13)
   - IQKeyboardManagerSwift (6.5.9)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
+  - Charts
+  - DropDown
   - IQKeyboardManagerSwift
   - SnapKit
 
 SPEC REPOS:
   trunk:
+    - Charts
+    - DropDown
     - IQKeyboardManagerSwift
     - SnapKit
 
 SPEC CHECKSUMS:
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 7814a95189b19f102c59260e7565bd564e1a8520
+PODFILE CHECKSUM: a7649f36b0137069e6e436cf6b836f2206320f7f
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.10.2

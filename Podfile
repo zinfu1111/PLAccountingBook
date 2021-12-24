@@ -8,5 +8,6 @@ target 'PLAccountingBook' do
   # Pods for PLAccountingBook
 pod 'IQKeyboardManagerSwift'
 pod 'SnapKit'
-
+pod 'Charts'
+pod 'DropDown'
 end

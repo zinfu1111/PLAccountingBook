@@ -12,15 +12,15 @@ class EditRecordViewController: UIViewController {
 
     @IBOutlet weak var dateButton: UIButton!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var accountTypeTextField:UITextField!{
+    @IBOutlet weak var tagTextField:UITextField!{
         didSet{
-            accountTypeTextField.text = viewModel.record.tag
-            accountTypeTextField.attributedPlaceholder = NSAttributedString(string: "輸入類型", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray5])
-            accountTypeTextField.borderStyle = .roundedRect
-            accountTypeTextField.layer.borderWidth = 3
-            accountTypeTextField.layer.borderColor = UIColor.systemTeal.cgColor
-            accountTypeTextField.delegate = viewModel
-            accountTypeTextField.tag = 1
+            tagTextField.text = viewModel.record.tag
+            tagTextField.attributedPlaceholder = NSAttributedString(string: "輸入類型", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray5])
+            tagTextField.borderStyle = .roundedRect
+            tagTextField.layer.borderWidth = 3
+            tagTextField.layer.borderColor = UIColor.systemTeal.cgColor
+            tagTextField.delegate = viewModel
+            tagTextField.tag = 1
         }
     }
     @IBOutlet weak var contentTextField:UITextField!{
@@ -102,7 +102,7 @@ class EditRecordViewController: UIViewController {
     }
     
     @IBAction func save(_ sender: Any){
-        let record = Record(id: viewModel.record.id, content: contentTextField.text!, cost: viewModel.record.cost, tag: accountTypeTextField.text!, datetime: datePickerView.datePicker.date)
+        let record = Record(id: viewModel.record.id, content: contentTextField.text!, cost: viewModel.record.cost, tag: tagTextField.text!, datetime: datePickerView.datePicker.date)
         
         viewModel.save(by: record)
         navigationController?.popViewController(animated: true)
@@ -118,9 +118,9 @@ extension EditRecordViewController {
     
     private func setupViewModelClosure(){
         
-        viewModel.editAccountTypeClosure = {[weak self] in
+        viewModel.editTagClosure = {[weak self] in
             guard let self = self else { return }
-            let data = AccountTypeManager.query()
+            let data = TagManager.query()
             self.textFieldPickerView.data = data
             self.textFieldPickerViewShowOrHide(true)
             
@@ -128,7 +128,7 @@ extension EditRecordViewController {
             self.textFieldPickerView.delegate = self.viewModel
             
         }
-        viewModel.endEditAccountTypeClosure = {[weak self] in
+        viewModel.endEditTagClosure = {[weak self] in
             guard let self = self else { return }
             self.textFieldPickerViewShowOrHide(false)
         }
@@ -203,8 +203,8 @@ extension EditRecordViewController {
                     self.textFieldPickerView.isHidden = true
                     self.viewModel.showTextFieldPickerView = false
                     
-                    self.accountTypeTextField.text = self.textFieldPickerView.textField.text
-                    self.viewModel.setAccountType(text: self.textFieldPickerView.textField.text!)
+                    self.tagTextField.text = self.textFieldPickerView.textField.text
+                    self.viewModel.setTag(text: self.textFieldPickerView.textField.text!)
                 }
             }
 
