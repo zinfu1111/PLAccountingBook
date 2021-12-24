@@ -41,6 +41,10 @@ class RecordTableViewDataSource<CELL:UITableViewCell,T>: NSObject,UITableViewDel
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.editClosure(self.items[indexPath.row])
+    }
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "刪除"){[weak self]
@@ -52,17 +56,8 @@ class RecordTableViewDataSource<CELL:UITableViewCell,T>: NSObject,UITableViewDel
         
         deleteAction.backgroundColor = .red
         
-        let editeAction = UIContextualAction(style: .destructive, title: "編輯"){[weak self]
-            (action, sourceView, completionHandler) in
-            guard let self = self else { return }
-            self.editClosure(self.items[indexPath.row])
-            completionHandler(true)
-        }
         
-        editeAction.backgroundColor = .orange
-        
-        
-        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, editeAction])
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
         
         return swipeConfiguration
     }
