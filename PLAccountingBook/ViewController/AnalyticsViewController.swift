@@ -35,11 +35,14 @@ class AnalyticsViewController: UIViewController {
         updateTableView()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        updatePieChart()
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updatePieChart()
+    }
 }
 
 extension AnalyticsViewController {
@@ -53,7 +56,7 @@ extension AnalyticsViewController {
     }
     
     private func updatePieChart(){
-        
+        chartView.subviews.forEach({$0.removeFromSuperview()})
         let chart = PieChartView()
         chart.frame.size = CGSize(width: 175, height: 175)
         chart.center = chartView.center

@@ -26,7 +26,6 @@ class AnalyticsTableViewDataSource<CELL:UITableViewCell,T>: NSObject,UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tableView.register(UINib(nibName: "\(CELL.self)", bundle: nil), forCellReuseIdentifier: "\(CELL.self)")
-        print(#function,"\(CELL.self)")
         return items.count
     }
     
