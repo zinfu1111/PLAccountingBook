@@ -102,6 +102,7 @@ class EditRecordViewController: UIViewController {
     }
     
     @IBAction func save(_ sender: Any){
+        print("debug123",datePickerView.datePicker.date)
         let record = Record(id: viewModel.record.id, content: contentTextField.text!, cost: viewModel.record.cost, tag: tagTextField.text!, datetime: datePickerView.datePicker.date)
         
         viewModel.save(by: record)

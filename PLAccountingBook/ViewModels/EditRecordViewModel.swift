@@ -30,12 +30,12 @@ class EditRecordViewModel : NSObject {
         }
     }
     
-    func save(by record:Record) {
+    func save(by data:Record) {
         
         if self.record.id == 0 {
             RecordManager.shared.insert(with: self.record)
         }else{
-            RecordManager.shared.update(with: record)
+            RecordManager.shared.update(with: data)
         }
     }
     

@@ -86,11 +86,14 @@ extension AnalyticsViewController {
             colors.append(color)
         }
         set.colors = colors
+        set.drawValuesEnabled = false
+        
         let data = PieChartData(dataSet: set)
         chart.data = data
         chart.noDataText = "No data available"
         // user interaction
         chart.isUserInteractionEnabled = false
+        chart.drawEntryLabelsEnabled = false
 
         chart.holeRadiusPercent = 0
         chart.transparentCircleColor = UIColor.clear
@@ -105,7 +108,7 @@ extension AnalyticsViewController {
             cell.tagLabel.text = tag
             cell.setTagView(text: String(tag.first!))
             cell.progressView.progress = totalCost != 0 ? Float(tagCost/totalCost) : 0
-            cell.percentLabel.text = totalCost != 0 ? "\((tagCost/totalCost) * 100)%" : "0%"
+            cell.percentLabel.text = totalCost != 0 ? "\(String(format: "%.2f", ((tagCost/totalCost) * 100)))%" : "0%"
             cell.costLabel.text = "\(tagCost.toMoneyFormatter())"
         })
         DispatchQueue.main.async {

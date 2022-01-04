@@ -99,7 +99,7 @@ extension RecordViewController {
     }
     
     private func updateTableView() {
-        self.viewModel.updateRecord()
+        self.viewModel.updateRecord(date: datePickerView.datePicker.date)
         self.setTableDataSource()
         DispatchQueue.main.async {
             self.tableView.delegate = self.dataSource

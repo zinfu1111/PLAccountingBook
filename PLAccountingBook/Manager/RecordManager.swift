@@ -30,7 +30,7 @@ class RecordManager {
         record.content = data.content
         record.cost = data.cost
         record.tag = data.tag
-        record.datetime = Date()
+        record.datetime = data.datetime
         appDelegate.saveContext()
         
     }

@@ -13,11 +13,11 @@ class RecordViewModel {
     var selectedDateClosure = {}
     
     init() {
-        self.recordData = RecordManager.shared.query()
+        self.recordData = RecordManager.shared.query().filter({$0.datetime.toString(format: "YYYY.M") == Date().toString(format: "YYYY.M")})
     }
     
-    func updateRecord() {
-        self.recordData = RecordManager.shared.query()
+    func updateRecord(date:Date) {
+        self.recordData = RecordManager.shared.query().filter({$0.datetime.toString(format: "YYYY.M") == date.toString(format: "YYYY.M")})
     }
     
 }
