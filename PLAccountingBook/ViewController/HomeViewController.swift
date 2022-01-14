@@ -11,6 +11,10 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var createButtonView: UIView!
+    @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var totalCostLabel: UILabel!
     
     private var viewModel: HomeViewModel!
     private var dataSource: RecordTableViewDataSource<RecordCell,Record>!
@@ -25,13 +29,15 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-            updateTableView()
+        createButtonView.layer.cornerRadius = createButtonView.bounds.height * 0.5
+        viewModel.updateData()
+        updateTableView()
+        updateLabel()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        navigationController?.navigationBar.prefersLargeTitles = false
         tabBarController?.tabBar.isHidden = false
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
@@ -39,10 +45,25 @@ class HomeViewController: UIViewController {
     @IBAction func selectedDate(_ sender: UIDatePicker) {
         viewModel.updateData(date: sender.date)
         updateTableView()
+        updateLabel()
+    }
+    
+    
+    @IBAction func goEditRecord(_ sender: Any) {
+        let editRecordVC = self.storyboard?.instantiateViewController(withIdentifier: "\(EditRecordViewController.self)") as! EditRecordViewController
+        editRecordVC.viewModel = EditRecordViewModel(record: Record(id: 0, content: "", cost: 0, tag: "", datetime: Date()))
+        navigationController?.pushViewController(editRecordVC, animated: true)
+        
     }
 }
 
 extension HomeViewController {
+    
+    private func updateLabel(){
+        self.dateLabel.text = datePicker.date.toString(format: "YYYY年M月d日")
+        self.totalCostLabel.text =
+            self.viewModel.recordData.filter({$0.datetime.toString(format: "YYYY/MM/dd") == datePicker.date.toString(format: "YYYY/MM/dd")}).map({ $0.cost }).reduce(0, {$0 + $1}).toMoneyFormatter()
+    }
     
     private func updateTableView() {
         self.setTableDataSource()

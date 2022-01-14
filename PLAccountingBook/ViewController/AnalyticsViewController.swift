@@ -29,7 +29,7 @@ class AnalyticsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
         viewModel = AnalyticsViewModel()
         updateHeaderView()
         updateTableView()

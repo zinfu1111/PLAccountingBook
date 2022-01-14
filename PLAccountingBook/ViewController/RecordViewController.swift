@@ -10,8 +10,6 @@ import UIKit
 class RecordViewController: UIViewController {
     
     @IBOutlet weak var tableView:UITableView!
-    @IBOutlet weak var createButtonView: UIView!
-    @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var dateButtonView: UIView!
     @IBOutlet weak var dateButton: UIButton!
     @IBOutlet weak var totalCost: UILabel!
@@ -48,7 +46,7 @@ class RecordViewController: UIViewController {
         tabBarController?.tabBar.isHidden = false
         navigationController?.setNavigationBarHidden(true, animated: animated)
         dateButtonView.layer.cornerRadius = dateButtonView.bounds.height * 0.5
-        createButtonView.layer.cornerRadius = createButtonView.bounds.height * 0.5
+        
     }
 
     @IBAction func showDatePicker(_ sender: Any) {
@@ -64,12 +62,6 @@ class RecordViewController: UIViewController {
         datePickerView.delegate = viewModel
     }
     
-    @IBAction func goEditRecord(_ sender: Any) {
-        let editRecordVC = self.storyboard?.instantiateViewController(withIdentifier: "\(EditRecordViewController.self)") as! EditRecordViewController
-        editRecordVC.viewModel = EditRecordViewModel(record: Record(id: 0, content: "", cost: 0, tag: "", datetime: Date()))
-        navigationController?.pushViewController(editRecordVC, animated: true)
-        
-    }
 }
 
 extension RecordViewController {

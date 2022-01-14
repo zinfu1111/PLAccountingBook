@@ -62,7 +62,7 @@ class EditRecordViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = true
-        navigationController?.navigationBar.tintColor = .white
+        
         navigationController?.setNavigationBarHidden(false, animated: animated)
         
     }
@@ -79,6 +79,9 @@ class EditRecordViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tabBarController?.tabBar.isHidden = true
+        navigationController?.navigationBar.prefersLargeTitles = true
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
         navigationController?.navigationBar.tintColor = .white
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
@@ -86,6 +89,11 @@ class EditRecordViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     @IBAction func showDatePicker(_ sender: Any) {
@@ -102,7 +110,7 @@ class EditRecordViewController: UIViewController {
     }
     
     @IBAction func save(_ sender: Any){
-        print("debug123",datePickerView.datePicker.date)
+        
         let record = Record(id: viewModel.record.id, content: contentTextField.text!, cost: viewModel.record.cost, tag: tagTextField.text!, datetime: datePickerView.datePicker.date)
         
         viewModel.save(by: record)

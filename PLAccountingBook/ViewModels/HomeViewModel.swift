@@ -13,7 +13,12 @@ class HomeViewModel: NSObject {
     
     override init() {
         super.init()
+        self.updateData()
+    }
+    
+    func updateData() {
         self.recordData = RecordManager.shared.query().filter({ $0.datetime.toString(format: "yyyy/MM/dd") == Date().toString(format: "yyyy/MM/dd")})
+        
     }
     
     func updateData(date: Date) {
