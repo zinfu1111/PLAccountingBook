@@ -525,7 +525,7 @@
 				DEVELOPMENT_TEAM = 5K2D8EVZ5V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PLAccountingBook/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "鼠錢聚樂簿";
+				INFOPLIST_KEY_CFBundleDisplayName = "鼠錢聚樂簿-記帳趣";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -557,7 +557,7 @@
 				DEVELOPMENT_TEAM = 5K2D8EVZ5V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PLAccountingBook/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "鼠錢聚樂簿";
+				INFOPLIST_KEY_CFBundleDisplayName = "鼠錢聚樂簿-記帳趣";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
