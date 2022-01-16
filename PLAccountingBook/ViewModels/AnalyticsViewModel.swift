@@ -7,18 +7,50 @@
 
 import UIKit
 
-class AnalyticsViewModel: NSObject {
+enum AnalyticsShowType:Int,CaseIterable {
+    case main = 0
+    case detail = 1
+    
+    var title:String {
+        switch self {
+        case .main:
+            return "百分比"
+        case .detail:
+            return "明細"
+        }
+    }
+    
+    var allTitle:[String]{
+        var res = [String]()
+        AnalyticsShowType.allCases.forEach { item in
+            res.append(item.title)
+        }
+        return res
+    }
+}
+
+class AnalyticsViewModel: NSObject,PanelHeaderViewDelegate {
     
     private(set) var recordData:[Record]!
     private(set) var tagData: [String]!
+    private(set) var showType: AnalyticsShowType!
+    
+    var updateTableViewWithPanel = {}
     
     override init(){
         super.init()
+        
+        showType = .main
         updateProperty()
+        
     }
     
     func updateProperty() {
         self.recordData = RecordManager.shared.query()
         self.tagData = TagManager.query()
+    }
+    
+    func selected(index: Int) {
+        showType = AnalyticsShowType(rawValue: index)
     }
 }

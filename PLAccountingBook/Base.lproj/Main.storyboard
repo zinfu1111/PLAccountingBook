@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hGO-OU-798">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hGO-OU-798">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -220,7 +220,7 @@
             </objects>
             <point key="canvasLocation" x="1976.8115942028987" y="81.026785714285708"/>
         </scene>
-        <!--月分析-->
+        <!--詳細記錄-->
         <scene sceneID="YIv-B5-M1l">
             <objects>
                 <viewController storyboardIdentifier="AnalyticsViewController" id="Ctg-5Q-IOZ" customClass="AnalyticsViewController" customModule="PLAccountingBook" customModuleProvider="target" sceneMemberID="viewController">
@@ -277,27 +277,38 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TfB-TS-Mde">
-                                <rect key="frame" x="0.0" y="244" width="375" height="423"/>
+                                <rect key="frame" x="0.0" y="294" width="375" height="373"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ZJ-qf-kUr">
+                                <rect key="frame" x="0.0" y="244" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="o0X-LS-0N9"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Pcn-f9-sT3"/>
                         <color key="backgroundColor" name="BgColor"/>
                         <constraints>
+                            <constraint firstItem="0ZJ-qf-kUr" firstAttribute="leading" secondItem="Pcn-f9-sT3" secondAttribute="leading" id="3B7-F2-y8B"/>
                             <constraint firstItem="7YC-zo-WB3" firstAttribute="trailing" secondItem="Pcn-f9-sT3" secondAttribute="trailing" id="7Ca-3n-N2S"/>
                             <constraint firstAttribute="bottom" secondItem="TfB-TS-Mde" secondAttribute="bottom" id="7IR-or-Zxd"/>
                             <constraint firstItem="TfB-TS-Mde" firstAttribute="leading" secondItem="Pcn-f9-sT3" secondAttribute="leading" id="7og-X6-orO"/>
                             <constraint firstItem="7YC-zo-WB3" firstAttribute="top" secondItem="Pcn-f9-sT3" secondAttribute="top" id="Bzu-NR-LeW"/>
-                            <constraint firstItem="TfB-TS-Mde" firstAttribute="top" secondItem="7YC-zo-WB3" secondAttribute="bottom" id="TE9-Lq-1LS"/>
+                            <constraint firstItem="Pcn-f9-sT3" firstAttribute="trailing" secondItem="0ZJ-qf-kUr" secondAttribute="trailing" id="KTA-eE-lVd"/>
+                            <constraint firstItem="0ZJ-qf-kUr" firstAttribute="top" secondItem="7YC-zo-WB3" secondAttribute="bottom" id="Ova-S0-dig"/>
+                            <constraint firstItem="TfB-TS-Mde" firstAttribute="top" secondItem="0ZJ-qf-kUr" secondAttribute="bottom" id="cTn-OZ-yqs"/>
                             <constraint firstItem="Pcn-f9-sT3" firstAttribute="trailing" secondItem="TfB-TS-Mde" secondAttribute="trailing" id="nNu-j7-SgZ"/>
                             <constraint firstItem="7YC-zo-WB3" firstAttribute="leading" secondItem="Pcn-f9-sT3" secondAttribute="leading" id="zeS-er-4Hb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="月分析" id="hOq-eP-EAZ"/>
+                    <navigationItem key="navigationItem" title="詳細記錄" id="hOq-eP-EAZ"/>
                     <connections>
                         <outlet property="chartView" destination="eQy-hU-0gF" id="FS2-MJ-s1L"/>
                         <outlet property="headerView" destination="7YC-zo-WB3" id="dSP-85-Twu"/>
                         <outlet property="monthLabel" destination="rFZ-Na-d5W" id="HAV-oT-et3"/>
+                        <outlet property="panelHeader" destination="0ZJ-qf-kUr" id="sBu-VB-Yfr"/>
                         <outlet property="tableView" destination="TfB-TS-Mde" id="JT4-lQ-pig"/>
                         <outlet property="totalCostLabel" destination="J6H-yd-Yhk" id="a7E-bj-PrC"/>
                         <outlet property="yearLabel" destination="0pG-54-IB9" id="bVf-7i-b6g"/>
@@ -476,7 +487,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="Ctm-wr-ZeT" kind="relationship" relationship="viewControllers" id="bqN-bz-zF7"/>
-                        <segue destination="FZo-3c-W7v" kind="relationship" relationship="viewControllers" id="foU-g5-Did"/>
                         <segue destination="FUQ-52-7Bv" kind="relationship" relationship="viewControllers" id="wQK-Uh-E21"/>
                     </connections>
                 </tabBarController>
@@ -488,7 +498,7 @@
         <scene sceneID="IBb-SP-VdC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FUQ-52-7Bv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="月分析" image="chart.pie.fill" catalog="system" selectedImage="chart.pie.fill" id="BI4-ZJ-chu">
+                    <tabBarItem key="tabBarItem" title="月分析" image="chart.pie.fill" catalog="system" selectedImage="book.circle.fill" id="BI4-ZJ-chu">
                         <color key="badgeColor" systemColor="systemOrangeColor"/>
                     </tabBarItem>
                     <toolbarItems/>

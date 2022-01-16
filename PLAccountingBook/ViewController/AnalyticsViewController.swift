@@ -17,10 +17,12 @@ class AnalyticsViewController: UIViewController {
     @IBOutlet weak var chartView: UIView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var panelHeader: UIView!
     
-    
+    private var panelHeaderView:PanelHeaderView!
     private var viewModel: AnalyticsViewModel!
-    private var dataSource: AnalyticsTableViewDataSource<TagCostCell,String>!
+    private var recordDataSource: RecordTableViewDataSource<RecordCell,Record>!
+    private var tagCostDataSource: AnalyticsTableViewDataSource<TagCostCell,String>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,10 @@ class AnalyticsViewController: UIViewController {
         viewModel = AnalyticsViewModel()
         updateHeaderView()
         updateTableView()
+        viewModel.updateTableViewWithPanel = {[weak self] in
+            guard let self = self else { return }
+            self.updateTableView()
+        }
     }
     
     override func viewWillLayoutSubviews() {
@@ -41,11 +47,20 @@ class AnalyticsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        updatePanel()
         updatePieChart()
     }
 }
 
 extension AnalyticsViewController {
+    
+    private func updatePanel(){
+        panelHeader.subviews.forEach({$0.removeFromSuperview()})
+        panelHeaderView = PanelHeaderView(frame: panelHeader.bounds, data: viewModel.showType.allTitle)
+        panelHeaderView.delegate = viewModel
+        panelHeader.addSubview(panelHeaderView)
+        
+    }
     
     private func updateHeaderView() {
         yearLabel.text = "\(Date().toString(format: "yyyy"))年"
@@ -100,8 +115,30 @@ extension AnalyticsViewController {
         self.chartView.addSubview(chart)
     }
     
-    private func updateTableView(){
-        self.dataSource = AnalyticsTableViewDataSource(cellIdentifier: "\(TagCostCell.self)", items: viewModel.tagData, configCell: { cell,tag in
+    private func setupDataSource(){
+        
+        //recordDataSource
+        self.recordDataSource = RecordTableViewDataSource(cellIdentifier: "\(RecordCell.self)", items: self.viewModel.recordData, configCell: { cell, model in
+            cell.tagLabel.text = model.tag
+            cell.setTagView(text: String(model.tag.first!))
+            cell.dateLabel.text = "\(model.datetime.toString(format: "MM/dd HH:mm"))"
+            cell.contentTextView.text = model.content
+            cell.costLabel.text = "\(Int(model.cost).toMoneyFormatter())元"
+        })
+        self.recordDataSource.editClosure = { item in
+            let editRecordVC = self.storyboard?.instantiateViewController(withIdentifier: "\(EditRecordViewController.self)") as! EditRecordViewController
+            editRecordVC.viewModel = EditRecordViewModel(record: item)
+            self.navigationController?.pushViewController(editRecordVC, animated: true)
+        }
+        self.recordDataSource.deleteClosure = { item in
+            RecordManager.shared.delete(with: item)
+            DispatchQueue.main.async {
+                self.updateTableView()
+            }
+        }
+        
+        //tagCostDataSource
+        self.tagCostDataSource = AnalyticsTableViewDataSource(cellIdentifier: "\(TagCostCell.self)", items: viewModel.tagData, configCell: { cell,tag in
 
             let totalCost = self.viewModel.recordData.filter({$0.datetime.toString(format: "yyyy.M") == Date().toString(format: "yyyy.M")}).map({ $0.cost }).reduce(0){ $0 + $1 }
             let tagCost = self.viewModel.recordData.filter({$0.tag == tag}).filter({$0.datetime.toString(format: "yyyy.M") == Date().toString(format: "yyyy.M")}).map({ $0.cost }).reduce(0){ $0 + $1 }
@@ -111,10 +148,30 @@ extension AnalyticsViewController {
             cell.percentLabel.text = totalCost != 0 ? "\(String(format: "%.2f", ((tagCost/totalCost) * 100)))%" : "0%"
             cell.costLabel.text = "\(tagCost.toMoneyFormatter())"
         })
+        
+    }
+    
+    private func updateTableView(){
+        
+        setupDataSource()
+        
         DispatchQueue.main.async {
 
-            self.tableView.dataSource = self.dataSource
-            self.tableView.delegate = self.dataSource
+            switch self.viewModel.showType {
+            case .main:
+                self.tableView.rowHeight = 80
+                self.tableView.dataSource = self.recordDataSource
+                self.tableView.delegate = self.recordDataSource
+            case .detail:
+                self.tableView.rowHeight = UITableView.automaticDimension
+                self.tableView.dataSource = self.tagCostDataSource
+                self.tableView.delegate = self.tagCostDataSource
+            case .none:
+                break
+            }
+            
+            
+            
             self.tableView.reloadData()
         }
     }

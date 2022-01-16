@@ -36,6 +36,10 @@
 		9CC6708A276A11C30060457A /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC67088276A11C30060457A /* RecordCell.xib */; };
 		9CC6708C276A17620060457A /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6708B276A17620060457A /* TagView.swift */; };
 		9CC6708E276A17F10060457A /* TagView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC6708D276A17F10060457A /* TagView.xib */; };
+		CE4D53D12793D0B5002219FB /* PanelHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D53D02793D0B5002219FB /* PanelHeaderView.swift */; };
+		CE4D53D32793D11F002219FB /* PanelHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4D53D22793D11F002219FB /* PanelHeaderView.xib */; };
+		CE4D53D52793D4EA002219FB /* PanelHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D53D42793D4EA002219FB /* PanelHeaderCell.swift */; };
+		CE4D53D72793D4FF002219FB /* PanelHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4D53D62793D4FF002219FB /* PanelHeaderCell.xib */; };
 		DA48B3EF27732ADE0076E9F0 /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48B3EE27732ADE0076E9F0 /* AnalyticsViewController.swift */; };
 		DA48B3F127732E750076E9F0 /* AnalyticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48B3F027732E750076E9F0 /* AnalyticsViewModel.swift */; };
 		DA48B3FA27741D600076E9F0 /* TagCostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48B3F827741D600076E9F0 /* TagCostCell.swift */; };
@@ -78,6 +82,10 @@
 		9CC6708B276A17620060457A /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		9CC6708D276A17F10060457A /* TagView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagView.xib; sourceTree = "<group>"; };
 		A490C32BE3A35D559EF923CD /* Pods-PLAccountingBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLAccountingBook.debug.xcconfig"; path = "Target Support Files/Pods-PLAccountingBook/Pods-PLAccountingBook.debug.xcconfig"; sourceTree = "<group>"; };
+		CE4D53D02793D0B5002219FB /* PanelHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelHeaderView.swift; sourceTree = "<group>"; };
+		CE4D53D22793D11F002219FB /* PanelHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PanelHeaderView.xib; sourceTree = "<group>"; };
+		CE4D53D42793D4EA002219FB /* PanelHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelHeaderCell.swift; sourceTree = "<group>"; };
+		CE4D53D62793D4FF002219FB /* PanelHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PanelHeaderCell.xib; sourceTree = "<group>"; };
 		DA48B3EE27732ADE0076E9F0 /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
 		DA48B3F027732E750076E9F0 /* AnalyticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewModel.swift; sourceTree = "<group>"; };
 		DA48B3F827741D600076E9F0 /* TagCostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCostCell.swift; sourceTree = "<group>"; };
@@ -205,6 +213,10 @@
 				9CC6708D276A17F10060457A /* TagView.xib */,
 				DA48B3F827741D600076E9F0 /* TagCostCell.swift */,
 				DA48B3F927741D600076E9F0 /* TagCostCell.xib */,
+				CE4D53D02793D0B5002219FB /* PanelHeaderView.swift */,
+				CE4D53D22793D11F002219FB /* PanelHeaderView.xib */,
+				CE4D53D42793D4EA002219FB /* PanelHeaderCell.swift */,
+				CE4D53D62793D4FF002219FB /* PanelHeaderCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -290,10 +302,12 @@
 				9CA4717E276B10B00043F67A /* DatePickerView.xib in Resources */,
 				9CA47193276C672E0043F67A /* Tag.plist in Resources */,
 				9C75AE6F2770582F00A699FB /* TextFieldPickerView.xib in Resources */,
+				CE4D53D32793D11F002219FB /* PanelHeaderView.xib in Resources */,
 				9C25641F276798560029131D /* LaunchScreen.storyboard in Resources */,
 				9CC6708E276A17F10060457A /* TagView.xib in Resources */,
 				9C25641C276798560029131D /* Assets.xcassets in Resources */,
 				9CC6708A276A11C30060457A /* RecordCell.xib in Resources */,
+				CE4D53D72793D4FF002219FB /* PanelHeaderCell.xib in Resources */,
 				9C25641A276798540029131D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +370,8 @@
 				9CC67080276A0E770060457A /* RecordTableViewDataSource.swift in Sources */,
 				9CA47184276B32720043F67A /* PopupViewManager.swift in Sources */,
 				9CA47180276B170C0043F67A /* DatePickerView.swift in Sources */,
+				CE4D53D52793D4EA002219FB /* PanelHeaderCell.swift in Sources */,
+				CE4D53D12793D0B5002219FB /* PanelHeaderView.swift in Sources */,
 				9CA4718B276BA2440043F67A /* Ext+Int.swift in Sources */,
 				9C256413276798540029131D /* AppDelegate.swift in Sources */,
 				DA48B3FA27741D600076E9F0 /* TagCostCell.swift in Sources */,
