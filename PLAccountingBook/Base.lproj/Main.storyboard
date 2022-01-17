@@ -131,95 +131,6 @@
             </objects>
             <point key="canvasLocation" x="1976.8" y="-698.5007496251875"/>
         </scene>
-        <!--Record View Controller-->
-        <scene sceneID="ILM-Cf-7lf">
-            <objects>
-                <viewController storyboardIdentifier="RecordViewController" id="xcR-Mf-sRY" customClass="RecordViewController" customModule="PLAccountingBook" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TOC-bF-w0u">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ETq-Kc-U9b">
-                                <rect key="frame" x="0.0" y="44" width="375" height="200"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVv-vN-Akf">
-                                        <rect key="frame" x="147.5" y="20" width="80" height="80"/>
-                                        <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aU0-Vx-mr4">
-                                                <rect key="frame" x="5" y="6" width="70" height="68"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="calendar.circle" catalog="system">
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="60"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="showDatePicker:" destination="xcR-Mf-sRY" eventType="touchUpInside" id="UPu-au-Btb"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="65z-t4-jOh"/>
-                                            <constraint firstItem="aU0-Vx-mr4" firstAttribute="centerY" secondItem="ZVv-vN-Akf" secondAttribute="centerY" id="Sdr-Qx-bko"/>
-                                            <constraint firstItem="aU0-Vx-mr4" firstAttribute="centerX" secondItem="ZVv-vN-Akf" secondAttribute="centerX" id="Yfq-yp-Ofl"/>
-                                            <constraint firstAttribute="width" secondItem="ZVv-vN-Akf" secondAttribute="height" multiplier="1:1" id="gug-rs-48K"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TW$1000,000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGy-tu-qVj">
-                                        <rect key="frame" x="226" y="162" width="129" height="28"/>
-                                        <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="20"/>
-                                        <color key="textColor" systemColor="systemGray6Color"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuZ-f1-NXb">
-                                        <rect key="frame" x="10" y="105" width="145" height="70"/>
-                                        <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="50"/>
-                                        <color key="textColor" systemColor="systemGray6Color"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
-                                <constraints>
-                                    <constraint firstItem="ZVv-vN-Akf" firstAttribute="top" secondItem="ETq-Kc-U9b" secondAttribute="top" constant="20" id="3oy-Cx-uGS"/>
-                                    <constraint firstItem="fuZ-f1-NXb" firstAttribute="top" secondItem="ZVv-vN-Akf" secondAttribute="bottom" constant="5" id="6PV-Pf-C4a"/>
-                                    <constraint firstAttribute="height" constant="200" id="Kie-t0-4KB"/>
-                                    <constraint firstItem="fuZ-f1-NXb" firstAttribute="leading" secondItem="ETq-Kc-U9b" secondAttribute="leading" constant="10" id="PMs-9K-ED6"/>
-                                    <constraint firstAttribute="trailing" secondItem="AGy-tu-qVj" secondAttribute="trailing" constant="20" id="pa5-1Y-wA4"/>
-                                    <constraint firstAttribute="bottom" secondItem="AGy-tu-qVj" secondAttribute="bottom" constant="10" id="rMU-qc-0Nd"/>
-                                    <constraint firstItem="ZVv-vN-Akf" firstAttribute="centerX" secondItem="ETq-Kc-U9b" secondAttribute="centerX" id="wIV-I0-hUX"/>
-                                </constraints>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aW6-Gg-jBZ">
-                                <rect key="frame" x="0.0" y="244" width="375" height="423"/>
-                                <color key="backgroundColor" red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="0.09728963485616722" colorSpace="custom" customColorSpace="sRGB"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Xpp-bE-Ozp"/>
-                        <color key="backgroundColor" name="BgColor"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="aW6-Gg-jBZ" secondAttribute="trailing" id="6JS-l5-zbL"/>
-                            <constraint firstItem="aW6-Gg-jBZ" firstAttribute="top" secondItem="ETq-Kc-U9b" secondAttribute="bottom" id="RUD-0U-bc4"/>
-                            <constraint firstAttribute="bottom" secondItem="aW6-Gg-jBZ" secondAttribute="bottom" id="RfX-Cm-gpr"/>
-                            <constraint firstItem="aW6-Gg-jBZ" firstAttribute="leading" secondItem="Xpp-bE-Ozp" secondAttribute="leading" id="cRo-X1-vzS"/>
-                            <constraint firstItem="ETq-Kc-U9b" firstAttribute="top" secondItem="Xpp-bE-Ozp" secondAttribute="top" id="hKJ-D4-9qV"/>
-                            <constraint firstItem="ETq-Kc-U9b" firstAttribute="leading" secondItem="Xpp-bE-Ozp" secondAttribute="leading" id="t1K-sY-hde"/>
-                            <constraint firstItem="Xpp-bE-Ozp" firstAttribute="trailing" secondItem="ETq-Kc-U9b" secondAttribute="trailing" id="y0M-ds-XUF"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="4E0-v3-juO"/>
-                    <connections>
-                        <outlet property="dateButton" destination="aU0-Vx-mr4" id="MCs-pd-0eO"/>
-                        <outlet property="dateButtonView" destination="ZVv-vN-Akf" id="3ff-Tc-xSz"/>
-                        <outlet property="dateLabel" destination="fuZ-f1-NXb" id="bqb-0e-4MK"/>
-                        <outlet property="tableView" destination="aW6-Gg-jBZ" id="5uh-Pt-8he"/>
-                        <outlet property="totalCost" destination="AGy-tu-qVj" id="azt-xF-0jA"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="anG-kx-RUm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1976.8115942028987" y="81.026785714285708"/>
-        </scene>
         <!--紀錄-->
         <scene sceneID="YIv-B5-M1l">
             <objects>
@@ -312,11 +223,64 @@
                         <outlet property="tableView" destination="TfB-TS-Mde" id="JT4-lQ-pig"/>
                         <outlet property="totalCostLabel" destination="J6H-yd-Yhk" id="a7E-bj-PrC"/>
                         <outlet property="yearLabel" destination="0pG-54-IB9" id="bVf-7i-b6g"/>
+                        <segue destination="C5F-Vn-fOL" kind="show" identifier="goTagDetail" destinationCreationSelector="goDetail:sender:" id="bx5-UI-ff9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p4I-11-mPD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1956" y="843.32833583208401"/>
+            <point key="canvasLocation" x="1977" y="81"/>
+        </scene>
+        <!--Tag Detail View Controller-->
+        <scene sceneID="Q0X-bl-aTY">
+            <objects>
+                <viewController storyboardIdentifier="TagDetailViewController" id="C5F-Vn-fOL" customClass="TagDetailViewController" customModule="PLAccountingBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UWK-rT-hXU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rqI-Ou-T6c">
+                                <rect key="frame" x="0.0" y="143" width="375" height="475"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="rJN-SQ-thh">
+                                <rect key="frame" x="95" y="44" width="185.5" height="79"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分類" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueh-Qg-gSF">
+                                        <rect key="frame" x="67.5" y="0.0" width="50" height="35"/>
+                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="25"/>
+                                        <color key="textColor" systemColor="systemTealColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="總金額：$12345" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8W-7P-Qkh">
+                                        <rect key="frame" x="0.0" y="44" width="185.5" height="35"/>
+                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="25"/>
+                                        <color key="textColor" systemColor="systemTealColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3tf-Bp-daD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rqI-Ou-T6c" firstAttribute="top" secondItem="rJN-SQ-thh" secondAttribute="bottom" constant="20" id="CIS-oN-JCI"/>
+                            <constraint firstItem="rJN-SQ-thh" firstAttribute="top" secondItem="3tf-Bp-daD" secondAttribute="top" id="Guy-9Q-iVP"/>
+                            <constraint firstItem="3tf-Bp-daD" firstAttribute="trailing" secondItem="rqI-Ou-T6c" secondAttribute="trailing" id="RWV-aW-cBp"/>
+                            <constraint firstItem="3tf-Bp-daD" firstAttribute="bottom" secondItem="rqI-Ou-T6c" secondAttribute="bottom" id="UKa-ck-QRP"/>
+                            <constraint firstItem="rJN-SQ-thh" firstAttribute="centerX" secondItem="UWK-rT-hXU" secondAttribute="centerX" id="eh6-hK-B6x"/>
+                            <constraint firstItem="rqI-Ou-T6c" firstAttribute="leading" secondItem="3tf-Bp-daD" secondAttribute="leading" id="i4C-NO-tlo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hac-R7-4Og"/>
+                    <connections>
+                        <outlet property="tableView" destination="rqI-Ou-T6c" id="Dr8-kl-lyl"/>
+                        <outlet property="tagLabel" destination="ueh-Qg-gSF" id="V5I-g2-VIX"/>
+                        <outlet property="totalLabel" destination="K8W-7P-Qkh" id="1NT-lB-DCI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eTc-4q-iIx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2869.5999999999999" y="80.50974512743629"/>
         </scene>
         <!--輸入-->
         <scene sceneID="XvV-jo-ZDp">
@@ -441,36 +405,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05n-oE-mBU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3752.8000000000002" y="81.409295352323838"/>
-        </scene>
-        <!--月紀錄-->
-        <scene sceneID="SHC-R5-65G">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FZo-3c-W7v" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="月紀錄" image="book.circle.fill" catalog="system" selectedImage="book.circle.fill" id="XFI-dQ-w2K">
-                        <color key="badgeColor" systemColor="systemOrangeColor"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="52e-ku-yTq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="systemTealColor"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="xcR-Mf-sRY" kind="relationship" relationship="rootViewController" id="Hhn-fP-t2b"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c7j-Mg-DrN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1069.5652173913045" y="82.366071428571431"/>
+            <point key="canvasLocation" x="3710" y="-698"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fZS-Qk-wUe">
@@ -517,7 +452,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rzw-hh-cZb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1068" y="843"/>
+            <point key="canvasLocation" x="1068" y="82"/>
         </scene>
         <!--首頁-->
         <scene sceneID="NWw-Yg-bUE">
@@ -565,21 +500,20 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgD-bY-4kV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2813.5999999999999" y="81.409295352323838"/>
+            <point key="canvasLocation" x="2770" y="-698"/>
         </scene>
     </scenes>
     <resources>
         <image name="book.circle.fill" catalog="system" width="128" height="121"/>
         <image name="calendar.badge.clock" catalog="system" width="128" height="108"/>
-        <image name="calendar.circle" catalog="system" width="128" height="121"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="BgColor">
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

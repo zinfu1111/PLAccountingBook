@@ -50,6 +50,16 @@ class AnalyticsViewController: UIViewController {
         updatePanel()
         updatePieChart()
     }
+    
+    @IBSegueAction func goDetail(_ coder: NSCoder, sender: Any?) -> TagDetailViewController? {
+        
+        
+        guard let indexPath = self.tableView.indexPathForSelectedRow?.first
+              else { return nil}
+        
+        return TagDetailViewController(coder: coder, tag: viewModel.tagData[indexPath], date: Date())
+    }
+    
 }
 
 extension AnalyticsViewController {
@@ -150,7 +160,10 @@ extension AnalyticsViewController {
             cell.percentLabel.text = totalCost != 0 ? "\(String(format: "%.2f", ((tagCost/totalCost) * 100)))%" : "0%"
             cell.costLabel.text = "\(tagCost.toMoneyFormatter())"
         })
-        
+        self.tagCostDataSource.selecedCell = {[weak self] item in
+            guard let self = self else { return }
+            self.performSegue(withIdentifier: "goTagDetail", sender: nil)
+        }
     }
     
     private func updateTableView(){

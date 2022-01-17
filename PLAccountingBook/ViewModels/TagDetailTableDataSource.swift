@@ -1,21 +1,19 @@
 //
-//  AnalyticsTableViewDataSource.swift
+//  TagDetailTableDataSource.swift
 //  PLAccountingBook
 //
-//  Created by Paul on 2021/12/24.
+//  Created by User on 2022/1/17.
 //
-
 
 import UIKit
 
-class AnalyticsTableViewDataSource<CELL:UITableViewCell,T>: NSObject,UITableViewDelegate,UITableViewDataSource {
+class TagDetailTableDataSource<CELL:UITableViewCell,T>: NSObject,UITableViewDelegate,UITableViewDataSource {
     
     private var cellIdentifier:String!
     
     private var items:[T]!
     
     var configCell: (CELL,T) -> () = { _,_ in }
-    var selecedCell: (T) -> () = { _ in }
     
     init(cellIdentifier: String, items: [T], configCell: @escaping (CELL, T) -> ()) {
         self.cellIdentifier = cellIdentifier
@@ -42,7 +40,4 @@ class AnalyticsTableViewDataSource<CELL:UITableViewCell,T>: NSObject,UITableView
         
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selecedCell(items[indexPath.row])
-    }
 }

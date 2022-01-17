@@ -15,7 +15,6 @@
 		9C25641F276798560029131D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C25641D276798560029131D /* LaunchScreen.storyboard */; };
 		9C25642827679CB30029131D /* PLAccountingBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C25642627679CB30029131D /* PLAccountingBook.xcdatamodeld */; };
 		9C25642A2767A0BE0029131D /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2564292767A0BE0029131D /* RecordManager.swift */; };
-		9C25642C2768F95F0029131D /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C25642B2768F95F0029131D /* RecordViewModel.swift */; };
 		9C75AE6F2770582F00A699FB /* TextFieldPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C75AE6E2770582F00A699FB /* TextFieldPickerView.xib */; };
 		9C75AE712770597200A699FB /* TextFieldPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75AE702770597200A699FB /* TextFieldPickerView.swift */; };
 		9CA4717E276B10B00043F67A /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CA4717D276B10B00043F67A /* DatePickerView.xib */; };
@@ -29,7 +28,6 @@
 		9CA47195276C79C20043F67A /* EditRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA47194276C79C20043F67A /* EditRecordViewController.swift */; };
 		9CA47199276C81A00043F67A /* Ext+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA47198276C81A00043F67A /* Ext+UIView.swift */; };
 		9CA4719D276C83680043F67A /* EditRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4719C276C83680043F67A /* EditRecordViewModel.swift */; };
-		9CC6707D2769F1F60060457A /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6707C2769F1F60060457A /* RecordViewController.swift */; };
 		9CC67080276A0E770060457A /* RecordTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6707F276A0E770060457A /* RecordTableViewDataSource.swift */; };
 		9CC67084276A0FB10060457A /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC67083276A0FB10060457A /* Record.swift */; };
 		9CC67089276A11C30060457A /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC67087276A11C30060457A /* RecordCell.swift */; };
@@ -40,6 +38,11 @@
 		CE4D53D32793D11F002219FB /* PanelHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4D53D22793D11F002219FB /* PanelHeaderView.xib */; };
 		CE4D53D52793D4EA002219FB /* PanelHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D53D42793D4EA002219FB /* PanelHeaderCell.swift */; };
 		CE4D53D72793D4FF002219FB /* PanelHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4D53D62793D4FF002219FB /* PanelHeaderCell.xib */; };
+		CE4D53D927959EFB002219FB /* TagDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D53D827959EFB002219FB /* TagDetailViewController.swift */; };
+		CE73C97E2795A312006582DE /* TagDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73C97D2795A312006582DE /* TagDetailCell.swift */; };
+		CE73C9802795A335006582DE /* TagDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE73C97F2795A335006582DE /* TagDetailCell.xib */; };
+		CE73C9822795A4CE006582DE /* TagDetailTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73C9812795A4CE006582DE /* TagDetailTableDataSource.swift */; };
+		CE73C9842795A515006582DE /* TagDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73C9832795A515006582DE /* TagDetailViewModel.swift */; };
 		DA48B3EF27732ADE0076E9F0 /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48B3EE27732ADE0076E9F0 /* AnalyticsViewController.swift */; };
 		DA48B3F127732E750076E9F0 /* AnalyticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48B3F027732E750076E9F0 /* AnalyticsViewModel.swift */; };
 		DA48B3FA27741D600076E9F0 /* TagCostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48B3F827741D600076E9F0 /* TagCostCell.swift */; };
@@ -60,7 +63,6 @@
 		9C256420276798560029131D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C25642727679CB30029131D /* PLAccountingBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PLAccountingBook.xcdatamodel; sourceTree = "<group>"; };
 		9C2564292767A0BE0029131D /* RecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
-		9C25642B2768F95F0029131D /* RecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
 		9C75AE6E2770582F00A699FB /* TextFieldPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldPickerView.xib; sourceTree = "<group>"; };
 		9C75AE702770597200A699FB /* TextFieldPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPickerView.swift; sourceTree = "<group>"; };
 		9CA4717D276B10B00043F67A /* DatePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerView.xib; sourceTree = "<group>"; };
@@ -74,7 +76,6 @@
 		9CA47194276C79C20043F67A /* EditRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecordViewController.swift; sourceTree = "<group>"; };
 		9CA47198276C81A00043F67A /* Ext+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+UIView.swift"; sourceTree = "<group>"; };
 		9CA4719C276C83680043F67A /* EditRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecordViewModel.swift; sourceTree = "<group>"; };
-		9CC6707C2769F1F60060457A /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		9CC6707F276A0E770060457A /* RecordTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewDataSource.swift; sourceTree = "<group>"; };
 		9CC67083276A0FB10060457A /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		9CC67087276A11C30060457A /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
@@ -86,6 +87,11 @@
 		CE4D53D22793D11F002219FB /* PanelHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PanelHeaderView.xib; sourceTree = "<group>"; };
 		CE4D53D42793D4EA002219FB /* PanelHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelHeaderCell.swift; sourceTree = "<group>"; };
 		CE4D53D62793D4FF002219FB /* PanelHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PanelHeaderCell.xib; sourceTree = "<group>"; };
+		CE4D53D827959EFB002219FB /* TagDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDetailViewController.swift; sourceTree = "<group>"; };
+		CE73C97D2795A312006582DE /* TagDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDetailCell.swift; sourceTree = "<group>"; };
+		CE73C97F2795A335006582DE /* TagDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagDetailCell.xib; sourceTree = "<group>"; };
+		CE73C9812795A4CE006582DE /* TagDetailTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDetailTableDataSource.swift; sourceTree = "<group>"; };
+		CE73C9832795A515006582DE /* TagDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDetailViewModel.swift; sourceTree = "<group>"; };
 		DA48B3EE27732ADE0076E9F0 /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
 		DA48B3F027732E750076E9F0 /* AnalyticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewModel.swift; sourceTree = "<group>"; };
 		DA48B3F827741D600076E9F0 /* TagCostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCostCell.swift; sourceTree = "<group>"; };
@@ -161,12 +167,13 @@
 		9CC6707E276A0E240060457A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				9C25642B2768F95F0029131D /* RecordViewModel.swift */,
 				9CC6707F276A0E770060457A /* RecordTableViewDataSource.swift */,
 				9CA4719C276C83680043F67A /* EditRecordViewModel.swift */,
 				DA48B3F027732E750076E9F0 /* AnalyticsViewModel.swift */,
 				DA4C746A27755A10001EB642 /* AnalyticsTableViewDataSource.swift */,
 				DA6254232783EB7D00365DFC /* HomeViewModel.swift */,
+				CE73C9812795A4CE006582DE /* TagDetailTableDataSource.swift */,
+				CE73C9832795A515006582DE /* TagDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -174,10 +181,10 @@
 		9CC67081276A0F490060457A /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				9CC6707C2769F1F60060457A /* RecordViewController.swift */,
 				9CA47194276C79C20043F67A /* EditRecordViewController.swift */,
 				DA48B3EE27732ADE0076E9F0 /* AnalyticsViewController.swift */,
 				DA6254212783EA9B00365DFC /* HomeViewController.swift */,
+				CE4D53D827959EFB002219FB /* TagDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -217,6 +224,8 @@
 				CE4D53D22793D11F002219FB /* PanelHeaderView.xib */,
 				CE4D53D42793D4EA002219FB /* PanelHeaderCell.swift */,
 				CE4D53D62793D4FF002219FB /* PanelHeaderCell.xib */,
+				CE73C97D2795A312006582DE /* TagDetailCell.swift */,
+				CE73C97F2795A335006582DE /* TagDetailCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -299,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA48B3FB27741D600076E9F0 /* TagCostCell.xib in Resources */,
+				CE73C9802795A335006582DE /* TagDetailCell.xib in Resources */,
 				9CA4717E276B10B00043F67A /* DatePickerView.xib in Resources */,
 				9CA47193276C672E0043F67A /* Tag.plist in Resources */,
 				9C75AE6F2770582F00A699FB /* TextFieldPickerView.xib in Resources */,
@@ -370,6 +380,7 @@
 				9CC67080276A0E770060457A /* RecordTableViewDataSource.swift in Sources */,
 				9CA47184276B32720043F67A /* PopupViewManager.swift in Sources */,
 				9CA47180276B170C0043F67A /* DatePickerView.swift in Sources */,
+				CE73C97E2795A312006582DE /* TagDetailCell.swift in Sources */,
 				CE4D53D52793D4EA002219FB /* PanelHeaderCell.swift in Sources */,
 				CE4D53D12793D0B5002219FB /* PanelHeaderView.swift in Sources */,
 				9CA4718B276BA2440043F67A /* Ext+Int.swift in Sources */,
@@ -378,14 +389,15 @@
 				9C256415276798540029131D /* SceneDelegate.swift in Sources */,
 				9CC67089276A11C30060457A /* RecordCell.swift in Sources */,
 				9C75AE712770597200A699FB /* TextFieldPickerView.swift in Sources */,
-				9CC6707D2769F1F60060457A /* RecordViewController.swift in Sources */,
+				CE73C9822795A4CE006582DE /* TagDetailTableDataSource.swift in Sources */,
 				9CA4719D276C83680043F67A /* EditRecordViewModel.swift in Sources */,
+				CE73C9842795A515006582DE /* TagDetailViewModel.swift in Sources */,
 				9CA47195276C79C20043F67A /* EditRecordViewController.swift in Sources */,
 				9CA47191276C65A70043F67A /* TagManager.swift in Sources */,
-				9C25642C2768F95F0029131D /* RecordViewModel.swift in Sources */,
 				9CA47189276B9E3C0043F67A /* Ext+Date.swift in Sources */,
 				DA6254242783EB7D00365DFC /* HomeViewModel.swift in Sources */,
 				9CA47199276C81A00043F67A /* Ext+UIView.swift in Sources */,
+				CE4D53D927959EFB002219FB /* TagDetailViewController.swift in Sources */,
 				9CC67084276A0FB10060457A /* Record.swift in Sources */,
 				9C25642827679CB30029131D /* PLAccountingBook.xcdatamodeld in Sources */,
 				DA4C746B27755A10001EB642 /* AnalyticsTableViewDataSource.swift in Sources */,
