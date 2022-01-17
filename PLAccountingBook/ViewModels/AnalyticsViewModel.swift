@@ -16,7 +16,7 @@ enum AnalyticsShowType:Int,CaseIterable {
         case .main:
             return "百分比"
         case .detail:
-            return "明細"
+            return "收支明細"
         }
     }
     
@@ -52,5 +52,6 @@ class AnalyticsViewModel: NSObject,PanelHeaderViewDelegate {
     
     func selected(index: Int) {
         showType = AnalyticsShowType(rawValue: index)
+        updateTableViewWithPanel()
     }
 }

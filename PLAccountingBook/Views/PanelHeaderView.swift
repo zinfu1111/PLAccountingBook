@@ -40,10 +40,14 @@ class PanelHeaderView: UIView,UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func setupUI() {
+        let width = self.bounds.width/CGFloat(data.count)
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: width, height: collectionView.bounds.height)
+        self.collectionView.collectionViewLayout = layout
         self.collectionView.register(UINib(nibName: "\(PanelHeaderCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(PanelHeaderCell.self)")
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        self.selectedViewW.constant = self.bounds.width/CGFloat(currentIndex)
+        self.selectedViewW.constant = width
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -69,12 +73,12 @@ class PanelHeaderView: UIView,UICollectionViewDataSource, UICollectionViewDelega
     private func updateTargetView(){
         
         if currentIndex != 0 {
-            UIView.animate(withDuration: 2) {
+            UIView.animate(withDuration: 1) {
                 self.targetViewX.constant = self.selectedViewW.constant * CGFloat(self.currentIndex)
                 self.layoutIfNeeded()
             }
         }else{
-            UIView.animate(withDuration: 2) {
+            UIView.animate(withDuration: 1) {
                 self.targetViewX.constant = 0
                 self.layoutIfNeeded()
             }

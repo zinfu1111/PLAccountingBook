@@ -220,7 +220,7 @@
             </objects>
             <point key="canvasLocation" x="1976.8115942028987" y="81.026785714285708"/>
         </scene>
-        <!--詳細記錄-->
+        <!--紀錄-->
         <scene sceneID="YIv-B5-M1l">
             <objects>
                 <viewController storyboardIdentifier="AnalyticsViewController" id="Ctg-5Q-IOZ" customClass="AnalyticsViewController" customModule="PLAccountingBook" customModuleProvider="target" sceneMemberID="viewController">
@@ -303,7 +303,7 @@
                             <constraint firstItem="7YC-zo-WB3" firstAttribute="leading" secondItem="Pcn-f9-sT3" secondAttribute="leading" id="zeS-er-4Hb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="詳細記錄" id="hOq-eP-EAZ"/>
+                    <navigationItem key="navigationItem" title="紀錄" id="hOq-eP-EAZ"/>
                     <connections>
                         <outlet property="chartView" destination="eQy-hU-0gF" id="FS2-MJ-s1L"/>
                         <outlet property="headerView" destination="7YC-zo-WB3" id="dSP-85-Twu"/>
@@ -494,11 +494,11 @@
             </objects>
             <point key="canvasLocation" x="159.42028985507247" y="82.366071428571431"/>
         </scene>
-        <!--月分析-->
+        <!--紀錄-->
         <scene sceneID="IBb-SP-VdC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FUQ-52-7Bv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="月分析" image="chart.pie.fill" catalog="system" selectedImage="book.circle.fill" id="BI4-ZJ-chu">
+                    <tabBarItem key="tabBarItem" title="紀錄" image="book.circle.fill" catalog="system" selectedImage="book.circle.fill" id="BI4-ZJ-chu">
                         <color key="badgeColor" systemColor="systemOrangeColor"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -572,7 +572,6 @@
         <image name="book.circle.fill" catalog="system" width="128" height="121"/>
         <image name="calendar.badge.clock" catalog="system" width="128" height="108"/>
         <image name="calendar.circle" catalog="system" width="128" height="121"/>
-        <image name="chart.pie.fill" catalog="system" width="128" height="121"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="plus" catalog="system" width="128" height="113"/>

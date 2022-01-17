@@ -132,7 +132,9 @@ extension AnalyticsViewController {
         }
         self.recordDataSource.deleteClosure = { item in
             RecordManager.shared.delete(with: item)
+            
             DispatchQueue.main.async {
+                self.viewModel.updateProperty()
                 self.updateTableView()
             }
         }
@@ -160,12 +162,12 @@ extension AnalyticsViewController {
             switch self.viewModel.showType {
             case .main:
                 self.tableView.rowHeight = 80
-                self.tableView.dataSource = self.recordDataSource
-                self.tableView.delegate = self.recordDataSource
-            case .detail:
-                self.tableView.rowHeight = UITableView.automaticDimension
                 self.tableView.dataSource = self.tagCostDataSource
                 self.tableView.delegate = self.tagCostDataSource
+            case .detail:
+                self.tableView.rowHeight = UITableView.automaticDimension
+                self.tableView.dataSource = self.recordDataSource
+                self.tableView.delegate = self.recordDataSource
             case .none:
                 break
             }

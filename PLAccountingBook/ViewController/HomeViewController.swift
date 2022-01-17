@@ -90,6 +90,8 @@ extension HomeViewController {
         self.dataSource.deleteClosure = { item in
             RecordManager.shared.delete(with: item)
             DispatchQueue.main.async {
+                
+                self.viewModel.updateData()
                 self.updateTableView()
             }
         }
