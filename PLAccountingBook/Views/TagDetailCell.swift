@@ -10,7 +10,7 @@ import UIKit
 class TagDetailCell: UITableViewCell {
 
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var titleLabel: UITextView!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

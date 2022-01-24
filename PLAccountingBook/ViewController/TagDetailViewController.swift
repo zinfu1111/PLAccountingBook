@@ -12,6 +12,15 @@ class TagDetailViewController: UIViewController {
     @IBOutlet weak var tagLabel: UILabel!
     @IBOutlet weak var totalLabel:UILabel!
     @IBOutlet weak var tableView:UITableView!
+    @IBOutlet weak var filterTextField:UITextField!{
+        didSet{
+            filterTextField.attributedPlaceholder = NSAttributedString(string: "篩選", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            filterTextField.borderStyle = .roundedRect
+            filterTextField.layer.borderWidth = 3
+            filterTextField.layer.borderColor = UIColor.systemTeal.cgColor
+            filterTextField.tag = 1
+        }
+    }
 
     private var dataSource: TagDetailTableDataSource<TagDetailCell,Record>!
     private let viewModel:TagDetailViewModel!

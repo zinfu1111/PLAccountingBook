@@ -54,10 +54,9 @@ class AnalyticsViewController: UIViewController {
     @IBSegueAction func goDetail(_ coder: NSCoder, sender: Any?) -> TagDetailViewController? {
         
         
-        guard let indexPath = self.tableView.indexPathForSelectedRow?.first
+        guard let indexPath = self.tableView.indexPathForSelectedRow
               else { return nil}
-        
-        return TagDetailViewController(coder: coder, tag: viewModel.tagData[indexPath], date: Date())
+        return TagDetailViewController(coder: coder, tag: viewModel.tagData[indexPath.row], date: Date())
     }
     
 }
