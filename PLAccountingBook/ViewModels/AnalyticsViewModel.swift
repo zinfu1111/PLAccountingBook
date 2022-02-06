@@ -31,6 +31,7 @@ enum AnalyticsShowType:Int,CaseIterable {
 
 class AnalyticsViewModel: NSObject,PanelHeaderViewDelegate {
     
+    private(set) var currentMonth:Date!
     private(set) var recordData:[Record]!
     private(set) var tagData: [String]!
     private(set) var showType: AnalyticsShowType!
@@ -41,13 +42,23 @@ class AnalyticsViewModel: NSObject,PanelHeaderViewDelegate {
         super.init()
         
         showType = .main
+        currentMonth = Date()
         updateProperty()
         
     }
     
     func updateProperty() {
-        self.recordData = RecordManager.shared.query()
+        self.recordData = RecordManager.shared.query().filter({$0.datetime.toString(format: "yyyy-mm-dd") == currentMonth.toString(format: "yyyy-mm-dd")})
         self.tagData = TagManager.query()
+    }
+    
+    func updateDate(year:String,month:String) {
+        let strDate = "\(year)\(month)"
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy年M月"
+        self.currentMonth = dateFormatter.date(from: strDate) ?? Date()
+        updateProperty()
     }
     
     func selected(index: Int) {

@@ -23,10 +23,14 @@ class AnalyticsViewController: UIViewController {
     private var viewModel: AnalyticsViewModel!
     private var recordDataSource: RecordTableViewDataSource<RecordCell,Record>!
     private var tagCostDataSource: AnalyticsTableViewDataSource<TagCostCell,String>!
+    private var yearDropDown:DropDown!
+    private var monthDropDown:DropDown!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
+        yearDropDown = DropDown()
+        monthDropDown = DropDown()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,13 +54,43 @@ class AnalyticsViewController: UIViewController {
         updatePanel()
         updatePieChart()
     }
+    @IBAction func showYear(_ sender: Any) {
+        
+        yearDropDown.anchorView = yearLabel
+        yearDropDown.bottomOffset = CGPoint(x: 0, y: yearLabel.bounds.height)
+        yearDropDown.dataSource = ["2021年","2022年","2023年","2024年","2025年"]
+        
+        yearDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            yearLabel.text = item
+            viewModel.updateDate(year: item, month: monthLabel.text!)
+            updateHeaderView()
+            updateTableView()
+            yearDropDown.hide()
+        }
+        yearDropDown.show()
+    }
+    @IBAction func showMonth(_ sender: Any) {
+        
+        monthDropDown.anchorView = monthLabel
+        monthDropDown.bottomOffset = CGPoint(x: 0, y: monthLabel.bounds.height)
+        monthDropDown.dataSource = ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"]
+        
+        monthDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            monthLabel.text = item
+            viewModel.updateDate(year: yearLabel.text!, month: item)
+            updateHeaderView()
+            updateTableView()
+            monthDropDown.hide()
+        }
+        monthDropDown.show()
+    }
     
     @IBSegueAction func goDetail(_ coder: NSCoder, sender: Any?) -> TagDetailViewController? {
         
         
         guard let indexPath = self.tableView.indexPathForSelectedRow
               else { return nil}
-        return TagDetailViewController(coder: coder, tag: viewModel.tagData[indexPath.row], date: Date())
+        return TagDetailViewController(coder: coder, tag: viewModel.tagData[indexPath.row], date: viewModel.currentMonth)
     }
     
 }
@@ -72,10 +106,10 @@ extension AnalyticsViewController {
     }
     
     private func updateHeaderView() {
-        yearLabel.text = "\(Date().toString(format: "yyyy"))年"
-        monthLabel.text = "\(Date().toString(format: "M"))月"
+        yearLabel.text = "\(viewModel.currentMonth.toString(format: "yyyy"))年"
+        monthLabel.text = "\(viewModel.currentMonth.toString(format: "M"))月"
         
-        totalCostLabel.text = "支出：\(viewModel.recordData.filter({$0.datetime.toString(format: "yyyy.M") == Date().toString(format: "yyyy.M")}).map({ $0.cost }).reduce(0){ $0 + $1 })元"
+        totalCostLabel.text = "支出：\(viewModel.recordData.filter({$0.datetime.toString(format: "yyyy.M") == viewModel.currentMonth.toString(format: "yyyy.M")}).map({ $0.cost }).reduce(0){ $0 + $1 })元"
         
     }
     
@@ -87,7 +121,7 @@ extension AnalyticsViewController {
         
         var entries = [PieChartDataEntry]()
         viewModel.tagData.forEach { tag in
-            let tagTotal = viewModel.recordData.filter({$0.tag == tag}).filter({$0.datetime.toString(format: "yyyy.M") == Date().toString(format: "yyyy.M")}).map({ $0.cost }).reduce(0){ $0 + $1 }
+            let tagTotal = viewModel.recordData.filter({$0.tag == tag}).filter({$0.datetime.toString(format: "yyyy.M") == viewModel.currentMonth.toString(format: "yyyy.M")}).map({ $0.cost }).reduce(0){ $0 + $1 }
             if tagTotal > 0 {
                 
                 let entry = PieChartDataEntry()
@@ -151,8 +185,8 @@ extension AnalyticsViewController {
         //tagCostDataSource
         self.tagCostDataSource = AnalyticsTableViewDataSource(cellIdentifier: "\(TagCostCell.self)", items: viewModel.tagData, configCell: { cell,tag in
 
-            let totalCost = self.viewModel.recordData.filter({$0.datetime.toString(format: "yyyy.M") == Date().toString(format: "yyyy.M")}).map({ $0.cost }).reduce(0){ $0 + $1 }
-            let tagCost = self.viewModel.recordData.filter({$0.tag == tag}).filter({$0.datetime.toString(format: "yyyy.M") == Date().toString(format: "yyyy.M")}).map({ $0.cost }).reduce(0){ $0 + $1 }
+            let totalCost = self.viewModel.recordData.filter({$0.datetime.toString(format: "yyyy.M") == self.viewModel.currentMonth.toString(format: "yyyy.M")}).map({ $0.cost }).reduce(0){ $0 + $1 }
+            let tagCost = self.viewModel.recordData.filter({$0.tag == tag}).filter({$0.datetime.toString(format: "yyyy.M") == self.viewModel.currentMonth.toString(format: "yyyy.M")}).map({ $0.cost }).reduce(0){ $0 + $1 }
             cell.tagLabel.text = tag
             cell.setTagView(text: String(tag.first!))
             cell.progressView.progress = totalCost != 0 ? Float(tagCost/totalCost) : 0
