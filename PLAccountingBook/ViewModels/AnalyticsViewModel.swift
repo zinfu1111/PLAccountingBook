@@ -48,17 +48,20 @@ class AnalyticsViewModel: NSObject,PanelHeaderViewDelegate {
     }
     
     func updateProperty() {
-        self.recordData = RecordManager.shared.query().filter({$0.datetime.toString(format: "yyyy-mm-dd") == currentMonth.toString(format: "yyyy-mm-dd")})
+        print(#function)
+        self.recordData = RecordManager.shared.query()
         self.tagData = TagManager.query()
+        
     }
     
     func updateDate(year:String,month:String) {
+        print(#function)
         let strDate = "\(year)\(month)"
 
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy年M月"
         self.currentMonth = dateFormatter.date(from: strDate) ?? Date()
-        updateProperty()
+        
     }
     
     func selected(index: Int) {

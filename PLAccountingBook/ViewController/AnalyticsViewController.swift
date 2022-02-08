@@ -36,6 +36,8 @@ class AnalyticsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        navigationController?.navigationBar.prefersLargeTitles = false
+        tabBarController?.tabBar.isHidden = false
         viewModel = AnalyticsViewModel()
         updateHeaderView()
         updateTableView()
@@ -106,10 +108,11 @@ extension AnalyticsViewController {
     }
     
     private func updateHeaderView() {
+        print(#function)
         yearLabel.text = "\(viewModel.currentMonth.toString(format: "yyyy"))年"
         monthLabel.text = "\(viewModel.currentMonth.toString(format: "M"))月"
         
-        totalCostLabel.text = "支出：\(viewModel.recordData.filter({$0.datetime.toString(format: "yyyy.M") == viewModel.currentMonth.toString(format: "yyyy.M")}).map({ $0.cost }).reduce(0){ $0 + $1 })元"
+        totalCostLabel.text = "支出：\(viewModel.recordData.filter({$0.datetime.toString(format: "yyyy/M") == viewModel.currentMonth.toString(format: "yyyy/M")}).map({ $0.cost }).reduce(0){ $0 + $1 })元"
         
     }
     
@@ -121,7 +124,7 @@ extension AnalyticsViewController {
         
         var entries = [PieChartDataEntry]()
         viewModel.tagData.forEach { tag in
-            let tagTotal = viewModel.recordData.filter({$0.tag == tag}).filter({$0.datetime.toString(format: "yyyy.M") == viewModel.currentMonth.toString(format: "yyyy.M")}).map({ $0.cost }).reduce(0){ $0 + $1 }
+            let tagTotal = viewModel.recordData.filter({$0.tag == tag}).filter({$0.datetime.toString(format: "yyyy/M") == viewModel.currentMonth.toString(format: "yyyy/M")}).map({ $0.cost }).reduce(0){ $0 + $1 }
             if tagTotal > 0 {
                 
                 let entry = PieChartDataEntry()
@@ -161,7 +164,7 @@ extension AnalyticsViewController {
     private func setupDataSource(){
         
         //recordDataSource
-        self.recordDataSource = RecordTableViewDataSource(cellIdentifier: "\(RecordCell.self)", items: self.viewModel.recordData, configCell: { cell, model in
+        self.recordDataSource = RecordTableViewDataSource(cellIdentifier: "\(RecordCell.self)", items: self.viewModel.recordData.filter({$0.datetime.toString(format: "yyyy/M") == viewModel.currentMonth.toString(format: "yyyy/M")}), configCell: { cell, model in
             cell.tagLabel.text = model.tag
             cell.setTagView(text: String(model.tag.first!))
             cell.dateLabel.text = "\(model.datetime.toString(format: "MM/dd HH:mm"))"
@@ -185,8 +188,8 @@ extension AnalyticsViewController {
         //tagCostDataSource
         self.tagCostDataSource = AnalyticsTableViewDataSource(cellIdentifier: "\(TagCostCell.self)", items: viewModel.tagData, configCell: { cell,tag in
 
-            let totalCost = self.viewModel.recordData.filter({$0.datetime.toString(format: "yyyy.M") == self.viewModel.currentMonth.toString(format: "yyyy.M")}).map({ $0.cost }).reduce(0){ $0 + $1 }
-            let tagCost = self.viewModel.recordData.filter({$0.tag == tag}).filter({$0.datetime.toString(format: "yyyy.M") == self.viewModel.currentMonth.toString(format: "yyyy.M")}).map({ $0.cost }).reduce(0){ $0 + $1 }
+            let totalCost = self.viewModel.recordData.filter({$0.datetime.toString(format: "yyyy/M") == self.viewModel.currentMonth.toString(format: "yyyy/M")}).map({ $0.cost }).reduce(0){ $0 + $1 }
+            let tagCost = self.viewModel.recordData.filter({$0.tag == tag}).filter({$0.datetime.toString(format: "yyyy/M") == self.viewModel.currentMonth.toString(format: "yyyy/M")}).map({ $0.cost }).reduce(0){ $0 + $1 }
             cell.tagLabel.text = tag
             cell.setTagView(text: String(tag.first!))
             cell.progressView.progress = totalCost != 0 ? Float(tagCost/totalCost) : 0
@@ -200,7 +203,7 @@ extension AnalyticsViewController {
     }
     
     private func updateTableView(){
-        
+        print(#function)
         setupDataSource()
         
         DispatchQueue.main.async {
