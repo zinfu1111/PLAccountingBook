@@ -63,7 +63,9 @@ class PanelHeaderView: UIView,UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        guard indexPath.row != currentIndex else {
+            return
+        }
         currentIndex = indexPath.row
         collectionView.reloadData()
         updateTargetView()

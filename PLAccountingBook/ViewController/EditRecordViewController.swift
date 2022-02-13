@@ -173,6 +173,7 @@ extension EditRecordViewController {
         //hide
         datePickerView.hide()
         datePickerView.datePicker.datePickerMode = .dateAndTime
+        datePickerView.datePicker.date = viewModel.record.datetime
         //addView
         view.addSubview(datePickerView)
         

@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         createButtonView.layer.cornerRadius = createButtonView.bounds.height * 0.5
-        viewModel.updateData()
+        viewModel.updateData(date: datePicker.date)
         updateTableView()
         updateLabel()
     }
@@ -51,7 +51,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func goEditRecord(_ sender: Any) {
         let editRecordVC = self.storyboard?.instantiateViewController(withIdentifier: "\(EditRecordViewController.self)") as! EditRecordViewController
-        editRecordVC.viewModel = EditRecordViewModel(record: Record(id: 0, content: "", cost: 0, tag: "", datetime: Date()))
+        editRecordVC.viewModel = EditRecordViewModel(record: Record(id: 0, content: "", cost: 0, tag: "", datetime: datePicker.date))
         navigationController?.pushViewController(editRecordVC, animated: true)
         
     }
