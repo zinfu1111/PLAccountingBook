@@ -10,6 +10,6 @@ pod 'IQKeyboardManagerSwift'
 pod 'SnapKit'
 pod 'Charts'
 pod 'DropDown'
-pod 'JTAppleCalendar'
+pod 'FSCalendar'
 
 end

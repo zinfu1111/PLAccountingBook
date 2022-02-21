@@ -3,32 +3,32 @@ PODS:
     - Charts/Core (= 3.6.0)
   - Charts/Core (3.6.0)
   - DropDown (2.3.13)
+  - FSCalendar (2.8.2)
   - IQKeyboardManagerSwift (6.5.9)
-  - JTAppleCalendar (8.0.3)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Charts
   - DropDown
+  - FSCalendar
   - IQKeyboardManagerSwift
-  - JTAppleCalendar
   - SnapKit
 
 SPEC REPOS:
   trunk:
     - Charts
     - DropDown
+    - FSCalendar
     - IQKeyboardManagerSwift
-    - JTAppleCalendar
     - SnapKit
 
 SPEC CHECKSUMS:
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
-  JTAppleCalendar: 932cadea40b1051beab10f67843451d48ba16c99
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: c9aac67b5b8c9f7c72dc53e4a94fe0d5160ba43d
+PODFILE CHECKSUM: a41977f356d3dbd0c65f09480ad58f8230c5b3a1
 
 COCOAPODS: 1.10.2
