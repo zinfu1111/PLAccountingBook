@@ -48,8 +48,8 @@
 		DA48B3FA27741D600076E9F0 /* TagCostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48B3F827741D600076E9F0 /* TagCostCell.swift */; };
 		DA48B3FB27741D600076E9F0 /* TagCostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA48B3F927741D600076E9F0 /* TagCostCell.xib */; };
 		DA4C746B27755A10001EB642 /* AnalyticsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4C746A27755A10001EB642 /* AnalyticsTableViewDataSource.swift */; };
-		DA6254222783EA9B00365DFC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6254212783EA9B00365DFC /* HomeViewController.swift */; };
 		DA6254242783EB7D00365DFC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6254232783EB7D00365DFC /* HomeViewModel.swift */; };
+		DAA2DB1527C4C37400FA5B6B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2DB1427C4C37400FA5B6B /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,8 +97,8 @@
 		DA48B3F827741D600076E9F0 /* TagCostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCostCell.swift; sourceTree = "<group>"; };
 		DA48B3F927741D600076E9F0 /* TagCostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCostCell.xib; sourceTree = "<group>"; };
 		DA4C746A27755A10001EB642 /* AnalyticsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTableViewDataSource.swift; sourceTree = "<group>"; };
-		DA6254212783EA9B00365DFC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DA6254232783EB7D00365DFC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		DAA2DB1427C4C37400FA5B6B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F53A9A23DF0AE58A06FBD748 /* Pods_PLAccountingBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PLAccountingBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -181,9 +181,9 @@
 		9CC67081276A0F490060457A /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DAA2DB1427C4C37400FA5B6B /* HomeViewController.swift */,
 				9CA47194276C79C20043F67A /* EditRecordViewController.swift */,
 				DA48B3EE27732ADE0076E9F0 /* AnalyticsViewController.swift */,
-				DA6254212783EA9B00365DFC /* HomeViewController.swift */,
 				CE4D53D827959EFB002219FB /* TagDetailViewController.swift */,
 			);
 			path = ViewController;
@@ -371,11 +371,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA6254222783EA9B00365DFC /* HomeViewController.swift in Sources */,
 				9C25642A2767A0BE0029131D /* RecordManager.swift in Sources */,
 				DA48B3F127732E750076E9F0 /* AnalyticsViewModel.swift in Sources */,
 				9CA4718D276BA2AB0043F67A /* Ext+Double.swift in Sources */,
 				DA48B3EF27732ADE0076E9F0 /* AnalyticsViewController.swift in Sources */,
+				DAA2DB1527C4C37400FA5B6B /* HomeViewController.swift in Sources */,
 				9CC6708C276A17620060457A /* TagView.swift in Sources */,
 				9CC67080276A0E770060457A /* RecordTableViewDataSource.swift in Sources */,
 				9CA47184276B32720043F67A /* PopupViewManager.swift in Sources */,

@@ -9,18 +9,21 @@ import UIKit
 import FSCalendar
 
 class HomeViewController: UIViewController {
-
-    @IBOutlet weak var calendar: FSCalendar!
+    
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var createButtonView: UIView!
-    @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var totalCostLabel: UILabel!
+    @IBOutlet weak var createButtonView: UIView!
+    @IBOutlet weak var createButton: UIButton!
+    
     @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
     
-    private var viewModel: HomeViewModel!
-    private var dataSource: RecordTableViewDataSource<RecordCell,Record>!
-    
+    fileprivate lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        return formatter
+    }()
     fileprivate lazy var scopeGesture: UIPanGestureRecognizer = {
         [unowned self] in
         let panGesture = UIPanGestureRecognizer(target: self.calendar, action: #selector(self.calendar.handleScopeGesture(_:)))
@@ -30,19 +33,26 @@ class HomeViewController: UIViewController {
         return panGesture
     }()
     
+    private var viewModel: HomeViewModel!
+    private var dataSource: RecordTableViewDataSource<RecordCell,Record>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         overrideUserInterfaceStyle = .light
         viewModel = HomeViewModel()
         
+        if UIDevice.current.model.hasPrefix("iPad") {
+            self.calendarHeightConstraint.constant = 400
+        }
         
+        self.calendar.calendarHeaderView.backgroundColor = .systemTeal
         self.calendar.select(Date())
         
         self.view.addGestureRecognizer(self.scopeGesture)
-//        self.tableView.panGestureRecognizer.require(toFail: self.scopeGesture)
-        self.calendar.scope = .week
+        self.tableView.panGestureRecognizer.require(toFail: self.scopeGesture)
+        self.calendar.scope = .month
+        
+        self.createCalendarHeaderButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,7 +62,7 @@ class HomeViewController: UIViewController {
         updateTableView()
         updateLabel()
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.navigationBar.prefersLargeTitles = false
@@ -60,25 +70,28 @@ class HomeViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    @IBAction func selectedDate(_ sender: UIDatePicker) {
-        viewModel.updateData(date: sender.date)
-        updateTableView()
-        updateLabel()
-    }
-    
-    
     @IBAction func goEditRecord(_ sender: Any) {
         let editRecordVC = self.storyboard?.instantiateViewController(withIdentifier: "\(EditRecordViewController.self)") as! EditRecordViewController
         editRecordVC.viewModel = EditRecordViewModel(record: Record(id: 0, content: "", cost: 0, tag: "", datetime: self.calendar.selectedDate!))
         navigationController?.pushViewController(editRecordVC, animated: true)
         
     }
+    
+    deinit {
+        print("\(#function)")
+    }
+    
+    
 }
 
-extension HomeViewController : FSCalendarDataSource, FSCalendarDelegate, UIGestureRecognizerDelegate {
+// MARK: - UIGestureRecognizerDelegate
+
+extension HomeViewController : UIGestureRecognizerDelegate {
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        
         let shouldBegin = self.tableView.contentOffset.y <= -self.tableView.contentInset.top
+        print(self.tableView.contentOffset)
         if shouldBegin {
             let velocity = self.scopeGesture.velocity(in: self.view)
             switch self.calendar.scope {
@@ -91,26 +104,58 @@ extension HomeViewController : FSCalendarDataSource, FSCalendarDelegate, UIGestu
         return shouldBegin
     }
     
+}
+
+// MARK: - FSCalendarDelegate + FSCalendarDataSource
+
+extension HomeViewController : FSCalendarDataSource, FSCalendarDelegate {
+    
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
-//        self.calendarHeightConstraint.constant = bounds.height
-//        self.view.layoutIfNeeded()
+        self.calendarHeightConstraint.constant = bounds.height
+        self.view.layoutIfNeeded()
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-//        print("did select date \(self.dateFormatter.string(from: date))")
-//        let selectedDates = calendar.selectedDates.map({self.dateFormatter.string(from: $0)})
-//        print("selected dates is \(selectedDates)")
+        viewModel.updateData(date: date)
+        updateTableView()
+        updateLabel()
+        print("did select date \(self.dateFormatter.string(from: date))")
+        let selectedDates = calendar.selectedDates.map({self.dateFormatter.string(from: $0)})
+        print("selected dates is \(selectedDates)")
         if monthPosition == .next || monthPosition == .previous {
             calendar.setCurrentPage(date, animated: true)
         }
     }
 
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-//        print("\(self.dateFormatter.string(from: calendar.currentPage))")
+        print("\(self.dateFormatter.string(from: calendar.currentPage))")
     }
+    
 }
-
 extension HomeViewController {
+    
+    private func createCalendarHeaderButton() {
+        let leftButton = UIButton()
+        leftButton.translatesAutoresizingMaskIntoConstraints = false
+        leftButton.setTitle("<", for: .normal)
+        leftButton.tintColor = .white
+        self.calendar.calendarHeaderView.addSubview(leftButton)
+        leftButton.topAnchor.constraint(equalTo: self.calendar.calendarHeaderView.topAnchor).isActive = true
+        leftButton.leftAnchor.constraint(equalTo: self.calendar.calendarHeaderView.leftAnchor,constant: 20).isActive = true
+        leftButton.bottomAnchor.constraint(equalTo: self.calendar.calendarHeaderView.bottomAnchor).isActive = true
+        
+        
+        let rightButton = UIButton()
+        rightButton.translatesAutoresizingMaskIntoConstraints = false
+        rightButton.setTitle(">", for: .normal)
+        rightButton.tintColor = .white
+        self.calendar.calendarHeaderView.addSubview(rightButton)
+        rightButton.topAnchor.constraint(equalTo: self.calendar.calendarHeaderView.topAnchor).isActive = true
+        rightButton.rightAnchor.constraint(equalTo: self.calendar.calendarHeaderView.rightAnchor,constant: -20).isActive = true
+        rightButton.bottomAnchor.constraint(equalTo: self.calendar.calendarHeaderView.bottomAnchor).isActive = true
+    }
+    
+    
     
     private func updateLabel(){
         self.dateLabel.text = self.calendar.selectedDate!.toString(format: "YYYY年M月d日")
