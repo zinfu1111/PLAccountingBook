@@ -50,6 +50,8 @@
 		DA4C746B27755A10001EB642 /* AnalyticsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4C746A27755A10001EB642 /* AnalyticsTableViewDataSource.swift */; };
 		DA6254242783EB7D00365DFC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6254232783EB7D00365DFC /* HomeViewModel.swift */; };
 		DAA2DB1527C4C37400FA5B6B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2DB1427C4C37400FA5B6B /* HomeViewController.swift */; };
+		DAABE90A27DF377F00C06D69 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABE90927DF377F00C06D69 /* APIService.swift */; };
+		DAABE90C27DF390900C06D69 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABE90B27DF390900C06D69 /* Member.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +101,8 @@
 		DA4C746A27755A10001EB642 /* AnalyticsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTableViewDataSource.swift; sourceTree = "<group>"; };
 		DA6254232783EB7D00365DFC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DAA2DB1427C4C37400FA5B6B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DAABE90927DF377F00C06D69 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		DAABE90B27DF390900C06D69 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		F53A9A23DF0AE58A06FBD748 /* Pods_PLAccountingBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PLAccountingBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -193,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				9CC67083276A0FB10060457A /* Record.swift */,
+				DAABE90B27DF390900C06D69 /* Member.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 				9C2564292767A0BE0029131D /* RecordManager.swift */,
 				9CA47183276B32720043F67A /* PopupViewManager.swift */,
 				9CA47190276C65A70043F67A /* TagManager.swift */,
+				DAABE90927DF377F00C06D69 /* APIService.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -397,10 +403,12 @@
 				9CA47189276B9E3C0043F67A /* Ext+Date.swift in Sources */,
 				DA6254242783EB7D00365DFC /* HomeViewModel.swift in Sources */,
 				9CA47199276C81A00043F67A /* Ext+UIView.swift in Sources */,
+				DAABE90A27DF377F00C06D69 /* APIService.swift in Sources */,
 				CE4D53D927959EFB002219FB /* TagDetailViewController.swift in Sources */,
 				9CC67084276A0FB10060457A /* Record.swift in Sources */,
 				9C25642827679CB30029131D /* PLAccountingBook.xcdatamodeld in Sources */,
 				DA4C746B27755A10001EB642 /* AnalyticsTableViewDataSource.swift in Sources */,
+				DAABE90C27DF390900C06D69 /* Member.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
