@@ -165,7 +165,7 @@ extension EditRecordViewController {
         textFieldPickerView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         view.rightAnchor.constraint(equalTo: textFieldPickerView.rightAnchor, constant: 0).isActive = true
 
-        textFieldPickerView.textField.text = viewModel.record.tag
+        textFieldPickerView.textField.text = viewModel.record.tag.isEmpty ? "\(TagManager.query().first!)" : viewModel.record.tag
     }
     
     private func createDatePickerView() {
