@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
         TagManager.createBaseData()
+        
+        
+        
+        
         return true
     }
 
