@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Member {
+struct Member:Codable {
     
-    internal init(id: Int, name: String, point: Int, phone: String) {
+    internal init(id: Int? = nil, name: String, point: Int, phone: String) {
         self.id = id
         self.name = name
         self.point = point
@@ -25,7 +25,7 @@ struct Member {
     }
     
     
-    let id:Int
+    let id:Int?
     var name:String
     var point:Int
     var phone:String

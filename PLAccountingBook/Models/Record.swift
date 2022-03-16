@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Record {
+struct Record:Codable {
     
     init(dataMO: RecordMO){
         self.id = Int(dataMO.id)
@@ -17,7 +17,7 @@ struct Record {
         self.datetime = dataMO.datetime ?? Date()
     }
     
-    internal init(id: Int, content: String, cost: Double, tag: String, datetime: Date) {
+    internal init(id: Int? = nil, content: String, cost: Double, tag: String, datetime: Date) {
         self.id = id
         self.content = content
         self.cost = cost
@@ -26,12 +26,10 @@ struct Record {
     }
     
     
-    let id:Int
+    let id:Int?
     var content:String
     var cost:Double
     var tag:String
     var datetime:Date
-    
-    
     
 }

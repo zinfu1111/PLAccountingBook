@@ -66,7 +66,7 @@ class RecordManager {
     func update(with data:Record) {
         let fetchRequest: NSFetchRequest<RecordMO> = RecordMO.fetchRequest()
         do {
-            if let record = try context.fetch(fetchRequest).first(where: { $0.id == data.id }){
+            if let record = try context.fetch(fetchRequest).first(where: { $0.id == data.id! }){
                 record.datetime = data.datetime
                 record.tag = data.tag
                 record.cost = data.cost
@@ -81,7 +81,7 @@ class RecordManager {
     func delete(with data:Record) {
         let fetchRequest: NSFetchRequest<RecordMO> = RecordMO.fetchRequest()
         do {
-            if let record = try context.fetch(fetchRequest).first(where: { $0.id == data.id }){
+            if let record = try context.fetch(fetchRequest).first(where: { $0.id == data.id! }){
                 context.delete(record)
                 appDelegate.saveContext()
             }
