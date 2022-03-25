@@ -7,13 +7,15 @@
 
 import Foundation
 
+var userId = ""
 struct Member:Codable {
     
-    internal init(id: Int? = nil, name: String, point: Int, phone: String) {
+    internal init(id: Int? = nil, name: String, point: Int, phone: String, mail: String) {
         self.id = id
         self.name = name
         self.point = point
         self.phone = phone
+        self.mail = mail
     }
     
     
@@ -22,6 +24,7 @@ struct Member:Codable {
         self.name = dataMO.name ?? ""
         self.phone = dataMO.phone ?? ""
         self.point = Int(dataMO.point)
+        self.mail = dataMO.mail ?? ""
     }
     
     
@@ -29,6 +32,7 @@ struct Member:Codable {
     var name:String
     var point:Int
     var phone:String
+    var mail:String
     
     
     

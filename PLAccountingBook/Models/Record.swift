@@ -17,12 +17,13 @@ struct Record:Codable {
         self.datetime = dataMO.datetime ?? Date()
     }
     
-    internal init(id: Int? = nil, content: String, cost: Double, tag: String, datetime: Date) {
+    internal init(id: Int? = nil, content: String, cost: Double, tag: String, datetime: Date,status: Int? = nil) {
         self.id = id
         self.content = content
         self.cost = cost
         self.tag = tag
         self.datetime = datetime
+        self.status = status
     }
     
     
@@ -31,5 +32,6 @@ struct Record:Codable {
     var cost:Double
     var tag:String
     var datetime:Date
+    var status:Int?
     
 }
