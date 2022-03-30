@@ -111,7 +111,7 @@ class EditRecordViewController: UIViewController {
     
     @IBAction func save(_ sender: Any){
         
-        let record = Record(id: viewModel.record.id, content: contentTextField.text!, cost: viewModel.record.cost, tag: tagTextField.text!, datetime: datePickerView.datePicker.date)
+        let record = Record(id: viewModel.record.id,memberId: 0, content: contentTextField.text!, cost: viewModel.record.cost, tag: tagTextField.text!, datetime: datePickerView.datePicker.date)
         
         viewModel.save(by: record)
         navigationController?.popViewController(animated: true)

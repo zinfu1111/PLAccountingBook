@@ -19,13 +19,7 @@ class UserViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if let id = UserDefaults.standard.string(forKey: "UserId") {
-            loginView.isHidden = true
-            userId = id
-        }else {
-            settingView.isHidden = true
-        }
-        
+        fetchUI()
     }
     
     
@@ -36,14 +30,36 @@ class UserViewController: UIViewController {
             self.loginVC.viewModel = LoginViewModel()
             self.loginVC.viewModel.registerSuccese = {[weak self] data in
                 guard let weakSelf = self else { return }
-                weakSelf.loginView.isHidden = true
-                weakSelf.settingView.isHidden = false
+                DispatchQueue.main.async {
+                    UserDefaults.standard.set(data.id, forKey: "UserId")
+                    weakSelf.loginView.isHidden = true
+                    weakSelf.settingView.isHidden = false
+                }
             }
             self.loginVC.viewModel.loginSuccese = self.loginVC.viewModel.registerSuccese
             
         } else if let settingVC = segue.destination as? SettingViewController,
                  segue.identifier == "SettingSegue" {
             self.settingVC = settingVC
+            self.settingVC.viewModel = SettingViewModel()
+            self.settingVC.viewModel.logoutCompletion = {[weak self] in
+                guard let weakSelf = self else { return }
+                DispatchQueue.main.async {
+                    weakSelf.fetchUI()
+                }
+            }
         }
+    }
+    
+    func fetchUI() {
+        if let id = UserDefaults.standard.string(forKey: "UserId") {
+            loginView.isHidden = true
+            settingView.isHidden = false
+            userId = id
+        }else {
+            settingView.isHidden = true
+            loginView.isHidden = false
+        }
+        
     }
 }

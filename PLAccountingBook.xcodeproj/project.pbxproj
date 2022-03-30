@@ -48,6 +48,7 @@
 		DA48B3FA27741D600076E9F0 /* TagCostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48B3F827741D600076E9F0 /* TagCostCell.swift */; };
 		DA48B3FB27741D600076E9F0 /* TagCostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA48B3F927741D600076E9F0 /* TagCostCell.xib */; };
 		DA4C746B27755A10001EB642 /* AnalyticsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4C746A27755A10001EB642 /* AnalyticsTableViewDataSource.swift */; };
+		DA57052527F14A6200CD367D /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57052427F14A6200CD367D /* SettingViewModel.swift */; };
 		DA6254242783EB7D00365DFC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6254232783EB7D00365DFC /* HomeViewModel.swift */; };
 		DAA2DB1527C4C37400FA5B6B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2DB1427C4C37400FA5B6B /* HomeViewController.swift */; };
 		DAABE90C27DF390900C06D69 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABE90B27DF390900C06D69 /* Member.swift */; };
@@ -72,6 +73,7 @@
 		DAABE9B527E2C6B900C06D69 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABE9B427E2C6B900C06D69 /* LoginViewModel.swift */; };
 		DAABE9B727E2CAE800C06D69 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABE9B627E2CAE800C06D69 /* APIResponse.swift */; };
 		DAABE9B927E2CAF500C06D69 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABE9B827E2CAF500C06D69 /* APIRequest.swift */; };
+		DAADFF1227F44DE900FB1BC0 /* Ext+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAADFF1127F44DE900FB1BC0 /* Ext+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +121,7 @@
 		DA48B3F827741D600076E9F0 /* TagCostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCostCell.swift; sourceTree = "<group>"; };
 		DA48B3F927741D600076E9F0 /* TagCostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCostCell.xib; sourceTree = "<group>"; };
 		DA4C746A27755A10001EB642 /* AnalyticsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTableViewDataSource.swift; sourceTree = "<group>"; };
+		DA57052427F14A6200CD367D /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		DA6254232783EB7D00365DFC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DAA2DB1427C4C37400FA5B6B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DAABE90B27DF390900C06D69 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
@@ -143,6 +146,7 @@
 		DAABE9B427E2C6B900C06D69 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DAABE9B627E2CAE800C06D69 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		DAABE9B827E2CAF500C06D69 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		DAADFF1127F44DE900FB1BC0 /* Ext+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+String.swift"; sourceTree = "<group>"; };
 		F53A9A23DF0AE58A06FBD748 /* Pods_PLAccountingBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PLAccountingBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -205,6 +209,7 @@
 				9CA4718A276BA2440043F67A /* Ext+Int.swift */,
 				9CA4718C276BA2AB0043F67A /* Ext+Double.swift */,
 				9CA47198276C81A00043F67A /* Ext+UIView.swift */,
+				DAADFF1127F44DE900FB1BC0 /* Ext+String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 				CE73C9812795A4CE006582DE /* TagDetailTableDataSource.swift */,
 				CE73C9832795A515006582DE /* TagDetailViewModel.swift */,
 				DAABE9B427E2C6B900C06D69 /* LoginViewModel.swift */,
+				DA57052427F14A6200CD367D /* SettingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 				DAABE99C27E1B3F500C06D69 /* HTTPTask.swift in Sources */,
 				DAABE9B927E2CAF500C06D69 /* APIRequest.swift in Sources */,
 				DAABE99727E1B3F500C06D69 /* Network.swift in Sources */,
+				DA57052527F14A6200CD367D /* SettingViewModel.swift in Sources */,
 				9C25642A2767A0BE0029131D /* RecordManager.swift in Sources */,
 				DAABE99227E1B3F500C06D69 /* FormatParameterEncoder.swift in Sources */,
 				DAABE9B727E2CAE800C06D69 /* APIResponse.swift in Sources */,
@@ -508,6 +515,7 @@
 				DAABE99927E1B3F500C06D69 /* PLAccountingBookEndPoint.swift in Sources */,
 				DAABE99627E1B3F500C06D69 /* Ext+Codable.swift in Sources */,
 				9C256415276798540029131D /* SceneDelegate.swift in Sources */,
+				DAADFF1227F44DE900FB1BC0 /* Ext+String.swift in Sources */,
 				9CC67089276A11C30060457A /* RecordCell.swift in Sources */,
 				9C75AE712770597200A699FB /* TextFieldPickerView.swift in Sources */,
 				CE73C9822795A4CE006582DE /* TagDetailTableDataSource.swift in Sources */,

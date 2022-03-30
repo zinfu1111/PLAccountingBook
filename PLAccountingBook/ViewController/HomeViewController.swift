@@ -72,7 +72,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func goEditRecord(_ sender: Any) {
         let editRecordVC = self.storyboard?.instantiateViewController(withIdentifier: "\(EditRecordViewController.self)") as! EditRecordViewController
-        editRecordVC.viewModel = EditRecordViewModel(record: Record(id: 0, content: "", cost: 0, tag: "", datetime: self.calendar.selectedDate!))
+        editRecordVC.viewModel = EditRecordViewModel(record: Record(id: 0, memberId: 0, content: "", cost: 0, tag: "", datetime: self.calendar.selectedDate!))
         navigationController?.pushViewController(editRecordVC, animated: true)
         
     }

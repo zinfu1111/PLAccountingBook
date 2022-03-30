@@ -34,6 +34,4 @@ struct Member:Codable {
     var phone:String
     var mail:String
     
-    
-    
 }
