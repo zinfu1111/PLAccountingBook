@@ -11,5 +11,6 @@ pod 'SnapKit'
 pod 'Charts'
 pod 'DropDown'
 pod 'FSCalendar'
+pod 'NVActivityIndicatorView'
 
 end

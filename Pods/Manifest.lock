@@ -5,6 +5,9 @@ PODS:
   - DropDown (2.3.13)
   - FSCalendar (2.8.2)
   - IQKeyboardManagerSwift (6.5.9)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
@@ -12,6 +15,7 @@ DEPENDENCIES:
   - DropDown
   - FSCalendar
   - IQKeyboardManagerSwift
+  - NVActivityIndicatorView
   - SnapKit
 
 SPEC REPOS:
@@ -20,6 +24,7 @@ SPEC REPOS:
     - DropDown
     - FSCalendar
     - IQKeyboardManagerSwift
+    - NVActivityIndicatorView
     - SnapKit
 
 SPEC CHECKSUMS:
@@ -27,8 +32,9 @@ SPEC CHECKSUMS:
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: a41977f356d3dbd0c65f09480ad58f8230c5b3a1
+PODFILE CHECKSUM: b680688507cd5a4dab566ffee95d0c9353f6cffb
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.11.2
