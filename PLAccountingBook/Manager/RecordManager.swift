@@ -31,6 +31,7 @@ class RecordManager {
         record.cost = data.cost
         record.tag = data.tag
         record.datetime = data.datetime
+        record.savingTypeId = Int64(Int(data.savingTypeId ?? 0))
         appDelegate.saveContext()
         
     }

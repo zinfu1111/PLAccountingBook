@@ -16,7 +16,7 @@ enum AnalyticsShowType:Int,CaseIterable {
         case .main:
             return "百分比"
         case .detail:
-            return "收支明細"
+            return "消費明細"
         }
     }
     
@@ -49,7 +49,7 @@ class AnalyticsViewModel: NSObject,PanelHeaderViewDelegate {
     
     func updateProperty() {
         print(#function)
-        self.recordData = RecordManager.shared.query().filter({$0.datetime.toString(format: "yyyy/M") == self.currentMonth.toString(format: "yyyy/M")})
+        self.recordData = RecordManager.shared.query().filter({$0.datetime.toString(format: "yyyy/M") == self.currentMonth.toString(format: "yyyy/M") && $0.savingTypeId != 1})
         self.tagData = TagManager.query()
         
     }

@@ -17,11 +17,11 @@ class HomeViewModel: NSObject {
     }
     
     func updateData() {
-        self.recordData = RecordManager.shared.query().filter({ $0.datetime.toString(format: "yyyy/MM/dd") == Date().toString(format: "yyyy/MM/dd")})
+        self.recordData = RecordManager.shared.query().filter({ $0.datetime.toString(format: "yyyy/MM/dd") == Date().toString(format: "yyyy/MM/dd") && $0.savingTypeId != 1})
         
     }
     
     func updateData(date: Date) {
-        recordData = RecordManager.shared.query().filter({ $0.datetime.toString(format: "yyyy/MM/dd") == date.toString(format: "yyyy/MM/dd")})
+        recordData = RecordManager.shared.query().filter({ $0.datetime.toString(format: "yyyy/MM/dd") == date.toString(format: "yyyy/MM/dd") && $0.savingTypeId != 1})
     }
 }

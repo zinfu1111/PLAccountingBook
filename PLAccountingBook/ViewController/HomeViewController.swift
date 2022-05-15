@@ -72,7 +72,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func goEditRecord(_ sender: Any) {
         let editRecordVC = self.storyboard?.instantiateViewController(withIdentifier: "\(EditRecordViewController.self)") as! EditRecordViewController
-        editRecordVC.viewModel = EditRecordViewModel(record: Record(id: 0, memberId: 0, content: "", cost: 0, tag: "", datetime: self.calendar.selectedDate!))
+        editRecordVC.viewModel = EditRecordViewModel(record: Record(id: 0, memberId: 0, content: "", cost: 0, tag: "", datetime: self.calendar.selectedDate!,savingTypeId: 0))
         navigationController?.pushViewController(editRecordVC, animated: true)
         
     }
@@ -160,7 +160,7 @@ extension HomeViewController {
     private func updateLabel(){
         self.dateLabel.text = self.calendar.selectedDate!.toString(format: "YYYY年M月d日")
         self.totalCostLabel.text =
-            self.viewModel.recordData.filter({$0.datetime.toString(format: "YYYY/MM/dd") == self.calendar.selectedDate!.toString(format: "YYYY/MM/dd")}).map({ $0.cost }).reduce(0, {$0 + $1}).toMoneyFormatter()
+        self.viewModel.recordData.filter({$0.datetime.toString(format: "YYYY/MM/dd") == self.calendar.selectedDate!.toString(format: "YYYY/MM/dd") && $0.savingTypeId != 1}).map({ $0.cost }).reduce(0, {$0 + $1}).toMoneyFormatter()
     }
     
     private func updateTableView() {

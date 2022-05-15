@@ -16,9 +16,10 @@ struct Record:Codable {
         self.tag = dataMO.tag ?? ""
         self.datetime = dataMO.datetime ?? Date()
         self.memberId = 0
+        self.savingTypeId = Int(dataMO.savingTypeId)
     }
     
-    internal init(id: Int? = nil,memberId: Int, content: String, cost: Double, tag: String, datetime: Date,status: Int? = nil) {
+    internal init(id: Int? = nil,memberId: Int, content: String, cost: Double, tag: String, datetime: Date,status: Int? = nil,savingTypeId: Int? = nil) {
         self.id = id
         self.content = content
         self.cost = cost
@@ -26,6 +27,7 @@ struct Record:Codable {
         self.datetime = datetime
         self.status = status
         self.memberId = memberId
+        self.savingTypeId = savingTypeId
     }
     
     
@@ -38,8 +40,11 @@ struct Record:Codable {
     var datetime:Date
     var status:Int?
     
+    //0:支出1:收入
+    var savingTypeId:Int?
+    
     enum CodingKeys: CodingKey {
-      case memberId, id, content, cost,tag,datetime,status
+      case memberId, id, content, cost,tag,datetime,status,savingTypeId
     }
     
     init(from decoder: Decoder) throws {
@@ -54,7 +59,7 @@ struct Record:Codable {
         }else{
             datetime = Date()
         }
-        
+        savingTypeId = try? container.decode(Int.self, forKey: .savingTypeId)
         status = try? container.decode(Int.self, forKey: .status)
     }
     
@@ -68,6 +73,7 @@ struct Record:Codable {
         try container.encode(content, forKey: .content)
         try container.encode(cost, forKey: .cost)
         try container.encode(tag, forKey: .tag)
+        try container.encode(savingTypeId, forKey: .savingTypeId)
         try container.encode(status, forKey: .status)
     }
     

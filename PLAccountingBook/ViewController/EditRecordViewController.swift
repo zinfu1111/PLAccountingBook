@@ -79,6 +79,7 @@ class EditRecordViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tabBarController?.tabBar.isHidden = true
+        navigationController?.navigationBar.topItem?.title = viewModel.record.savingTypeId == 0 ? "輸入支出" : "輸入收入"
         navigationController?.navigationBar.prefersLargeTitles = true
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.largeTitleTextAttributes = textAttributes

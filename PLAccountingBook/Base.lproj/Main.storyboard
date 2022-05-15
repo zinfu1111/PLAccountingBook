@@ -602,7 +602,14 @@
                             <constraint firstItem="pky-rW-uQ1" firstAttribute="leading" secondItem="Uid-Ku-tEt" secondAttribute="leading" id="ytt-r2-qBx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="首頁" id="DcH-25-dN3"/>
+                    <navigationItem key="navigationItem" title="首頁" id="DcH-25-dN3">
+                        <barButtonItem key="rightBarButtonItem" image="building.columns.fill" catalog="system" id="01a-R4-O0a">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="goEditBank:" destination="pRI-Mo-s4x" id="ELr-ua-GS6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="calendar" destination="pky-rW-uQ1" id="NSx-Cm-3Yf"/>
                         <outlet property="calendarHeightConstraint" destination="vEk-jJ-MxG" id="y5T-rG-TAR"/>
@@ -789,6 +796,7 @@
     </scenes>
     <resources>
         <image name="book.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="building.columns.fill" catalog="system" width="128" height="113"/>
         <image name="calendar.badge.clock" catalog="system" width="128" height="108"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
