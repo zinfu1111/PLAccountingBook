@@ -17,8 +17,8 @@ class SettingViewModel: NSObject {
         manager = RestManager()
     }
 
-    func uploadRecord(by memberId: Int) {
-        
+    func uploadRecord(by memberId: Int,completion:@escaping(()->Void)) {
+        let requsetGroup = DispatchGroup()
         let data = RecordManager.shared.query().map { item -> APIRequest.Create<Record>.Record in
             let record = Record(memberId: memberId, content: item.content, cost: item.cost, tag: item.tag, datetime: item.datetime)
             return APIRequest.Create<Record>.Record(fields: record)
@@ -33,7 +33,10 @@ class SettingViewModel: NSObject {
                 return item
             }
             let postData = APIRequest.Create<Record>(records: currentData)
-            postRecord(postData)
+            requsetGroup.enter()
+            postRecord(postData) {
+                requsetGroup.leave()
+            }
             currentIndex = 9*i+1
         }
         
@@ -44,28 +47,24 @@ class SettingViewModel: NSObject {
                 return item
             }
             let postData = APIRequest.Create<Record>(records: currentData)
-            postRecord(postData)
-//            postRecord(data[currentIndex...currentIndex+losePushCount-1])
+            requsetGroup.enter()
+            postRecord(postData) {
+                requsetGroup.leave()
+            }
+
         }
         
         
-        
+        requsetGroup.notify(queue: .main) {
+            completion()
+        }
     }
     
-    private func postRecord(_ postData: APIRequest.Create<Record>){
+    private func postRecord(_ postData: APIRequest.Create<Record>,completion:@escaping (()->Void)){
         
         manager.requestWAPI(.record, bodyParameters: postData, resType: APIResponse.List<Record>.self){[weak self] response, error in
             guard let weakSelf = self else { return }
-            guard let error = error,response == nil else {
-
-                if let memeber = response?.records.first {
-//                    print(<#T##Any#>)
-//                    weakSelf.registerSuccese?(memeber)
-                }
-                return
-
-            }
-//            weakSelf.connectError?(error.localizedDescription)
+            completion()
 
         }
 
