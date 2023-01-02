@@ -17,7 +17,7 @@ class InComeViewModel: NSObject {
     }
     
     func updateData() {
-        self.recordData = RecordManager.shared.query().filter({$0.savingTypeId == 1})
+        self.recordData = RecordManager.shared.query().filter({$0.savingTypeId == 1 || $0.tag == "薪資"})
         
     }
     

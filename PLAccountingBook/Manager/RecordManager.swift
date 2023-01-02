@@ -72,6 +72,7 @@ class RecordManager {
                 record.tag = data.tag
                 record.cost = data.cost
                 record.content = data.content
+                record.savingTypeId = Int64(Int(data.savingTypeId ?? 0))
                 appDelegate.saveContext()
             }
         } catch {

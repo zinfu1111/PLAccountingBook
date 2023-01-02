@@ -33,9 +33,12 @@ class EditRecordViewModel : NSObject {
     func save(by data:Record) {
         
         if self.record.id == 0 {
+            self.record.savingTypeId = self.record.tag == "薪資" ? 1 : 0
             RecordManager.shared.insert(with: self.record)
         }else{
-            RecordManager.shared.update(with: data)
+            var updateData = data
+            updateData.savingTypeId = self.record.tag == "薪資" ? 1 : 0
+            RecordManager.shared.update(with: updateData)
         }
     }
     

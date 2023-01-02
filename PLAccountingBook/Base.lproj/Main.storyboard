@@ -812,10 +812,10 @@
             </objects>
             <point key="canvasLocation" x="1030" y="-1507"/>
         </scene>
-        <!--FSCalendarScopeExample-->
+        <!--InComeViewController-->
         <scene sceneID="6zr-Vb-k3F">
             <objects>
-                <viewController title="FSCalendarScopeExample" id="bQ5-qk-aXJ" customClass="InComeViewController" customModule="PLAccountingBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="InComeViewController" id="bQ5-qk-aXJ" customClass="InComeViewController" customModule="PLAccountingBook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kbe-q3-sC2"/>
                         <viewControllerLayoutGuide type="bottom" id="gmV-9a-U0t"/>
